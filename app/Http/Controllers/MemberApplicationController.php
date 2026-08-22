@@ -24,22 +24,10 @@ class MemberApplicationController extends Controller
 
         $application = MemberApplication::create($validated);
 
-        // Build pre-formatted WhatsApp message for GAE AG Direct Attention
-        $waMessage = "¡Hola GAE AG! Deseo postular como Socio del Gremio:\n\n" .
-            "👤 Nombre: {$application->full_name}\n" .
-            "🆔 RUT: {$application->rut}\n" .
-            "📜 Licencia SEC: " . ($application->sec_licence ?: 'En trámite / Acreditado') . "\n" .
-            "🛠️ Especialidad: {$application->category} ({$application->class})\n" .
-            "📍 Ubicación: {$application->city}, {$application->region}\n" .
-            "📞 Teléfono: {$application->phone}\n" .
-            "✉️ Email: {$application->email}";
-
-        $whatsappUrl = "https://wa.me/56912345678?text=" . urlencode($waMessage);
-
         return response()->json([
             'success' => true,
             'message' => '¡Tu postulación ha sido enviada exitosamente! El administrador revisará tu solicitud.',
-            'whatsapp_url' => $whatsappUrl,
+            'application' => $application,
         ]);
     }
 }
