@@ -392,6 +392,168 @@
     </div>
 </section>
 
+<!-- Únete al Gremio GAE AG Section & Interactive Modal -->
+<section id="unete" class="py-20 bg-slate-900 text-white relative border-t border-slate-800 overflow-hidden" x-data="{
+    modalOpen: false,
+    loading: false,
+    form: {
+        full_name: '',
+        rut: '',
+        sec_licence: '',
+        category: 'Gas',
+        class: 'Clase B SEC',
+        phone: '',
+        email: '',
+        city: '',
+        region: 'Región Metropolitana',
+        bio: ''
+    },
+    submitApplication() {
+        if(!this.form.full_name || !this.form.rut || !this.form.phone || !this.form.email) {
+            alert('Por favor completa todos los campos requeridos (*).');
+            return;
+        }
+        this.loading = true;
+        fetch('{{ route('members.apply_store') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify(this.form)
+        })
+        .then(res => res.json())
+        .then(data => {
+            this.loading = false;
+            if(data.success) {
+                alert('¡Postulación enviada exitosamente! Se abrirá un chat directo con el Administrador por WhatsApp.');
+                window.open(data.whatsapp_url, '_blank');
+                this.modalOpen = false;
+                this.form = { full_name: '', rut: '', sec_licence: '', category: 'Gas', class: 'Clase B SEC', phone: '', email: '', city: '', region: 'Región Metropolitana', bio: '' };
+            }
+        })
+        .catch(err => {
+            this.loading = false;
+            alert('Error enviando la postulación. Inténtalo de nuevo.');
+        });
+    }
+}">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+        <span class="px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
+            Convocatoria Abierta 2026
+        </span>
+
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+            ¿Eres Especialista en Gas, Agua o Energía? <span class="bg-gradient-to-r from-emerald-400 via-sky-400 to-amber-400 bg-clip-text text-transparent">Únete a GAE AG</span>
+        </h2>
+
+        <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Profesionaliza tu carrera, obtén tu CV digital público en vivo y valida tus certificados e instalaciones con código QR dinámico de la SEC.
+        </p>
+
+        <div>
+            <button @click="modalOpen = true" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-gae-green via-gae-blue to-gae-amber text-white font-extrabold text-sm sm:text-base shadow-2xl hover:scale-105 transition-all min-h-[48px]">
+                ⚡ Postular & Unirme como Socio al Gremio
+            </button>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div x-cloak x-show="modalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog">
+        <!-- Backdrop -->
+        <div x-show="modalOpen" @click="modalOpen = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md"></div>
+
+        <!-- Modal Card -->
+        <div x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="relative w-full max-w-2xl bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl p-6 sm:p-8 space-y-6 text-white z-10 max-h-[90vh] overflow-y-auto">
+            
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div>
+                    <h3 class="text-xl font-black text-white">Formulario de Postulación de Socio</h3>
+                    <p class="text-xs text-slate-400">Ingresa tus datos de acreditación para integrarte a GAE AG</p>
+                </div>
+                <button @click="modalOpen = false" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white">&times;</button>
+            </div>
+
+            <form @submit.prevent="submitApplication()" class="space-y-4 text-xs">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Nombre Completo *</label>
+                        <input type="text" x-model="form.full_name" required placeholder="Ej: Juan Pérez Morales" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">RUT *</label>
+                        <input type="text" x-model="form.rut" required placeholder="Ej: 12.345.678-9" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Especialidad Principal *</label>
+                        <select x-model="form.category" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                            <option value="Gas">Gas SEC</option>
+                            <option value="Agua">Agua & Sanitaria</option>
+                            <option value="Energía">Energía Solar</option>
+                            <option value="Gas, Agua y Energía">Gas, Agua y Energía</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Licencia SEC</label>
+                        <input type="text" x-model="form.sec_licence" placeholder="Ej: SEC-GAS-99120" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Clase / Certificación</label>
+                        <input type="text" x-model="form.class" placeholder="Ej: Clase A SEC / Sanitaria" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Teléfono / WhatsApp *</label>
+                        <input type="text" x-model="form.phone" required placeholder="Ej: +56 9 1234 5678" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Email *</label>
+                        <input type="email" x-model="form.email" required placeholder="ejemplo@correo.cl" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Ciudad *</label>
+                        <input type="text" x-model="form.city" required placeholder="Ej: Concepción" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Región *</label>
+                        <input type="text" x-model="form.region" required placeholder="Ej: Región del Bío Bío" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-300 mb-1">Resumen de Experiencia Técnica</label>
+                    <textarea x-model="form.bio" rows="3" placeholder="Describe brevemente tus años de experiencia en proyectos de gas, agua o energía..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green"></textarea>
+                </div>
+
+                <div class="pt-4 flex items-center justify-end gap-3 border-t border-slate-800">
+                    <button type="button" @click="modalOpen = false" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold">Cancelar</button>
+                    <button type="submit" :disabled="loading" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gae-green to-gae-blue hover:opacity-90 font-bold text-white shadow-md">
+                        <span x-show="!loading">🚀 Enviar Postulación & Contactar por WhatsApp</span>
+                        <span x-show="loading">Procesando postulación...</span>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
 @endsection
 
 @push('scripts')

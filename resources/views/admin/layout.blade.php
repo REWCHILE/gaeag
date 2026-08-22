@@ -65,30 +65,38 @@
                 </div>
 
                 <!-- Desktop Navigation Links -->
-                <div class="hidden lg:flex items-center gap-2">
-                    <a href="{{ route('admin.dashboard') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.dashboard') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
-                        Dashboard
-                    </a>
-                    <a href="{{ route('admin.members.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.members.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
-                        Socios ({{ \App\Models\Member::count() }})
-                    </a>
-                    <a href="{{ route('admin.bulletins.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.bulletins.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Boletines & Mailer IA
-                    </a>
-                    <a href="{{ route('admin.content_grid.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.content_grid.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
-                        📅 Grilla de Contenido
-                    </a>
-                    <a href="{{ route('admin.settings.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.settings.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
-                        ⚙️ Llaves de API IA
-                    </a>
-                    <form action="{{ route('logout') }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="px-3 py-2 rounded-xl bg-red-950/80 hover:bg-red-900 text-red-300 text-xs font-bold transition-all border border-red-800/50">
-                            Salir
-                        </button>
-                    </form>
-                </div>
+             <div class="hidden lg:flex flex-wrap items-center gap-2">
+                <a href="{{ route('admin.dashboard') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.dashboard') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
+                    Dashboard
+                </a>
+                <a href="{{ route('admin.members.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.members.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
+                    Socios ({{ \App\Models\Member::count() }})
+                </a>
+                <a href="{{ route('admin.applications.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.applications.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all flex items-center gap-1.5">
+                    <span>📩 Solicitudes</span>
+                    @if(\App\Models\MemberApplication::where('status', 'pending')->count() > 0)
+                        <span class="px-1.5 py-0.5 rounded-full bg-amber-500 text-slate-900 font-extrabold text-[10px]">
+                            {{ \App\Models\MemberApplication::where('status', 'pending')->count() }}
+                        </span>
+                    @endif
+                </a>
+                <a href="{{ route('admin.bulletins.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.bulletins.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Boletines & Mailer IA
+                </a>
+                <a href="{{ route('admin.content_grid.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.content_grid.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
+                    📅 Grilla de Contenido
+                </a>
+                <a href="{{ route('admin.settings.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold {{ request()->routeIs('admin.settings.*') ? 'bg-gae-blue text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }} transition-all">
+                    ⚙️ Llaves de API IA
+                </a>
+                <form action="{{ route('logout') }}" method="POST" class="inline">
+                    @csrf
+                    <button type="submit" class="px-3 py-2 rounded-xl bg-red-950/80 hover:bg-red-900 text-red-300 text-xs font-bold transition-all border border-red-800/50">
+                        Salir
+                    </button>
+                </form>
+            </div>
 
                 <!-- Back to Site Link -->
                 <div class="flex items-center gap-2">

@@ -4,10 +4,12 @@ use App\Http\Controllers\Admin\BulletinController as AdminBulletinController;
 use App\Http\Controllers\Admin\CertificateController as AdminCertificateController;
 use App\Http\Controllers\Admin\ContentGridController as AdminContentGridController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\MemberApplicationController as AdminMemberApplicationController;
 use App\Http\Controllers\Admin\MemberController as AdminMemberController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MemberApplicationController;
 use App\Http\Controllers\MemberPublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Public Web Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profesionales/{slug}', [MemberPublicController::class, 'show'])->name('members.public_show');
+Route::post('/postular-socio', [MemberApplicationController::class, 'store'])->name('members.apply_store');
 
 // Authentication Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -38,6 +41,12 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/socios/{member}/editar', [AdminMemberController::class, 'edit'])->name('members.edit');
     Route::put('/socios/{member}', [AdminMemberController::class, 'update'])->name('members.update');
     Route::delete('/socios/{member}', [AdminMemberController::class, 'destroy'])->name('members.destroy');
+
+    // Member Applications Management
+    Route::get('/solicitudes', [AdminMemberApplicationController::class, 'index'])->name('applications.index');
+    Route::post('/solicitudes/{application}/aprobar', [AdminMemberApplicationController::class, 'approve'])->name('applications.approve');
+    Route::post('/solicitudes/{application}/rechazar', [AdminMemberApplicationController::class, 'reject'])->name('applications.reject');
+    Route::delete('/solicitudes/{application}', [AdminMemberApplicationController::class, 'destroy'])->name('applications.destroy');
 
     // Certificates Management
     Route::post('/socios/{member}/certificados', [AdminCertificateController::class, 'store'])->name('certificates.store');
