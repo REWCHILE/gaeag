@@ -396,6 +396,24 @@
 <section id="unete" class="py-20 bg-slate-900 text-white relative border-t border-slate-800 overflow-hidden" x-data="{
     modalOpen: false,
     loading: false,
+    chileData: {
+        'Región Metropolitana de Santiago': ['Santiago', 'Providencia', 'Las Condes', 'Maipú', 'Puente Alto', 'Ñuñoa', 'La Florida', 'Vitacura', 'Lo Barnechea', 'Peñalolén', 'San Bernardo', 'Pudahuel', 'Quilicura', 'Recoleta', 'Santiago Centro', 'Talagante', 'Melipilla', 'Colina', 'Lampa', 'Buin', 'Paine'],
+        'Región de Arica y Parinacota': ['Arica', 'Camarones', 'Putre', 'General Lagos'],
+        'Región de Tarapacá': ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Camiña', 'Colchane', 'Huara', 'Pica'],
+        'Región de Antofagasta': ['Antofagasta', 'Mejillones', 'Sierra Gorda', 'Taltal', 'Calama', 'Ollagüe', 'San Pedro de Atacama', 'Tocopilla', 'María Elena'],
+        'Región de Atacama': ['Copiapó', 'Caldera', 'Tierra Amarilla', 'Vallenar', 'Alto del Carmen', 'Freirina', 'Huasco', 'Chañaral', 'Diego de Almagro'],
+        'Región de Coquimbo': ['La Serena', 'Coquimbo', 'Andacollo', 'La Higuera', 'Paiguano', 'Vicuña', 'Illapel', 'Canela', 'Los Vilos', 'Salamanca', 'Ovalle', 'Combarbalá', 'Monte Patria', 'Punitaqui', 'Río Hurtado'],
+        'Región de Valparaíso': ['Valparaíso', 'Viña del Mar', 'Concón', 'Quintero', 'Puchuncaví', 'Quilpué', 'Villa Alemana', 'Quillota', 'La Calera', 'Limache', 'Olmué', 'San Antonio', 'Los Andes', 'San Felipe', 'Isla de Pascua'],
+        'Región del Libertador General Bernardo O\'Higgins': ['Rancagua', 'Machalí', 'Graneros', 'San Fernando', 'Pichilemu', 'Rengo', 'Chimbarongo', 'Santa Cruz'],
+        'Región del Maule': ['Talca', 'Curicó', 'Linares', 'Cauquenes', 'Constitución', 'Molina', 'San Javier', 'Parral'],
+        'Región de Ñuble': ['Chillán', 'Bulnes', 'San Carlos', 'Yungay', 'Quirihue', 'Coihueco'],
+        'Región del Biobío': ['Concepción', 'Talcahuano', 'San Pedro de la Paz', 'Chiguayante', 'Coronel', 'Lota', 'Hualpén', 'Los Ángeles', 'Nacimiento', 'Lebu', 'Arauco'],
+        'Región de La Araucanía': ['Temuco', 'Padre Las Casas', 'Angol', 'Villarrica', 'Pucón', 'Victoria', 'Lautaro', 'Traiguén'],
+        'Región de Los Ríos': ['Valdivia', 'Corral', 'Lanco', 'Los Lagos', 'Mariquina', 'Paillaco', 'Panguipulli', 'La Unión', 'Río Bueno'],
+        'Región de Los Lagos': ['Puerto Montt', 'Calbuco', 'Fresia', 'Frutillar', 'Llanquihue', 'Los Muermos', 'Puerto Varas', 'Castro', 'Ancud', 'Osorno', 'Purranque'],
+        'Región de Aysén del General Carlos Ibáñez del Campo': ['Coyhaique', 'Aysén', 'Chile Chico', 'Cochrane'],
+        'Región de Magallanes y de la Antártica Chilena': ['Punta Arenas', 'Puerto Natales', 'Porvenir', 'Cabo de Hornos']
+    },
     form: {
         full_name: '',
         rut: '',
@@ -404,12 +422,16 @@
         class: 'Clase B SEC',
         phone: '',
         email: '',
-        city: '',
-        region: 'Región Metropolitana',
+        city: 'Santiago',
+        region: 'Región Metropolitana de Santiago',
         bio: ''
     },
+    onRegionChange() {
+        const comunas = this.chileData[this.form.region] || [];
+        this.form.city = comunas.length > 0 ? comunas[0] : '';
+    },
     submitApplication() {
-        if(!this.form.full_name || !this.form.rut || !this.form.phone || !this.form.email) {
+        if(!this.form.full_name || !this.form.rut || !this.form.phone || !this.form.email || !this.form.city) {
             alert('Por favor completa todos los campos requeridos (*).');
             return;
         }
@@ -429,7 +451,7 @@
                 alert('¡Postulación enviada exitosamente! Se abrirá un chat directo con el Administrador por WhatsApp.');
                 window.open(data.whatsapp_url, '_blank');
                 this.modalOpen = false;
-                this.form = { full_name: '', rut: '', sec_licence: '', category: 'Gas', class: 'Clase B SEC', phone: '', email: '', city: '', region: 'Región Metropolitana', bio: '' };
+                this.form = { full_name: '', rut: '', sec_licence: '', category: 'Gas', class: 'Clase B SEC', phone: '', email: '', city: 'Santiago', region: 'Región Metropolitana de Santiago', bio: '' };
             }
         })
         .catch(err => {
@@ -523,15 +545,24 @@
                     </div>
                 </div>
 
+                <!-- Dynamic Cascading Region & Commune Selectors (Chile) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Ciudad *</label>
-                        <input type="text" x-model="form.city" required placeholder="Ej: Concepción" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label class="block font-bold text-slate-300 mb-1">Región de Chile *</label>
+                        <select x-model="form.region" @change="onRegionChange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                            <template x-for="(comunas, reg) in chileData" :key="reg">
+                                <option :value="reg" x-text="reg" :selected="reg === form.region"></option>
+                            </template>
+                        </select>
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Región *</label>
-                        <input type="text" x-model="form.region" required placeholder="Ej: Región del Bío Bío" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label class="block font-bold text-slate-300 mb-1">Ciudad / Comuna *</label>
+                        <select x-model="form.city" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                            <template x-for="comuna in (chileData[form.region] || [])" :key="comuna">
+                                <option :value="comuna" x-text="comuna" :selected="comuna === form.city"></option>
+                            </template>
+                        </select>
                     </div>
                 </div>
 
