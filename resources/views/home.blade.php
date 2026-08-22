@@ -216,8 +216,8 @@
             
             <!-- Gas SEC -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-gae-green flex items-center justify-center text-3xl font-black group-hover:scale-110 transition-transform">
-                    🔥
+                <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+                    <img src="{{ asset('images/icons/icon_gas.jpg') }}" alt="Profesionales del Gas SEC" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Profesionales del Gas SEC</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
@@ -227,8 +227,8 @@
 
             <!-- Agua & Sanitario -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
-                <div class="w-14 h-14 rounded-2xl bg-sky-100 text-gae-blue flex items-center justify-center text-3xl font-black group-hover:scale-110 transition-transform">
-                    💧
+                <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-sky-50 border border-sky-100 flex items-center justify-center">
+                    <img src="{{ asset('images/icons/icon_water.jpg') }}" alt="Especialistas en Agua" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Especialistas en Agua</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
@@ -238,8 +238,8 @@
 
             <!-- Energías Renovables -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
-                <div class="w-14 h-14 rounded-2xl bg-amber-100 text-gae-amber flex items-center justify-center text-3xl font-black group-hover:scale-110 transition-transform">
-                    ⚡
+                <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-amber-50 border border-amber-100 flex items-center justify-center">
+                    <img src="{{ asset('images/icons/icon_energy.jpg') }}" alt="Energías Renovables" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Energías Renovables</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
