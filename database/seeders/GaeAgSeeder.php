@@ -217,5 +217,27 @@ class GaeAgSeeder extends Seeder
                 array_merge($faq, ['is_published' => true])
             );
         }
+
+        // 4. Global Settings
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'contact_phone'],
+            ['value' => '+56 9 4987 7316', 'description' => 'Teléfono oficial de llamadas GAE AG']
+        );
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'contact_whatsapp'],
+            ['value' => '56949877316', 'description' => 'Número de WhatsApp oficial']
+        );
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'contact_email'],
+            ['value' => 'contacto@gae-ag.cl', 'description' => 'Correo institucional']
+        );
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'site_seo_title'],
+            ['value' => 'GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía en Chile | Instaladores SEC', 'description' => 'Título SEO Google']
+        );
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'site_meta_description'],
+            ['value' => 'Sitio oficial de GAE AG, la Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.', 'description' => 'Meta descripción SEO']
+        );
     }
 }

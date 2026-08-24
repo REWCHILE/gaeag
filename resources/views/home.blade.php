@@ -447,24 +447,12 @@
         .then(res => res.json())
         .then(data => {
             this.loading = false;
-            if(data.success && data.application) {
-                const app = data.application;
-                const text = `Hola GAE AG, deseo postular como Socio del Gremio:
-
-Nombre: ${app.full_name}
-RUT: ${app.rut}
-Licencia SEC: ${app.sec_licence || 'En trámite / Acreditado'} (${app.class || 'Clase B SEC'})
-Especialidad: ${app.category}
-Ubicación: ${app.city}, ${app.region}
-Teléfono: ${app.phone}
-Email: ${app.email}`;
-
-                const waUrl = `https://wa.me/56912345678?text=${encodeURIComponent(text)}`;
-
-                alert('¡Postulación enviada exitosamente! Se abrirá un chat directo con el Administrador por WhatsApp.');
-                window.open(waUrl, '_blank');
+            if(data.success && data.test_url) {
+                alert('¡Paso 1 completado! A continuación responderás el Test Psicológico y Ético-Laboral de Admisión.');
+                window.location.href = data.test_url;
+            } else if(data.success) {
+                alert('¡Postulación enviada exitosamente! El administrador revisará tus antecedentes.');
                 this.modalOpen = false;
-                this.form = { full_name: '', rut: '', sec_licence: '', category: 'Gas', class: 'Clase B SEC', phone: '', email: '', city: 'Santiago', region: 'Región Metropolitana de Santiago', bio: '' };
             }
         })
         .catch(err => {

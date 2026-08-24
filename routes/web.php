@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberApplicationController;
 use App\Http\Controllers\MemberPublicController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PsychologicalTestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +21,22 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-// Public Web Routes
+// Public SEO & Internal Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/quienes-somos', [PageController::class, 'quienesSomos'])->name('pages.quienes_somos');
+Route::get('/beneficios-socios', [PageController::class, 'beneficios'])->name('pages.beneficios');
+Route::get('/unete-al-gremio', [PageController::class, 'unete'])->name('pages.unete');
+Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
+Route::get('/robots.txt', [PageController::class, 'robots'])->name('robots');
+
+// Public Member Profiles & Applications
 Route::get('/profesionales/{slug}', [MemberPublicController::class, 'show'])->name('members.public_show');
 Route::post('/postular-socio', [MemberApplicationController::class, 'store'])->name('members.apply_store');
+
+// Psychological Admission Evaluation (Paso 2)
+Route::get('/evaluacion-admision/{token}', [PsychologicalTestController::class, 'show'])->name('psych.test');
+Route::post('/evaluacion-admision/{token}', [PsychologicalTestController::class, 'submit'])->name('psych.submit');
+Route::get('/evaluacion-admision/{token}/completado', [PsychologicalTestController::class, 'completed'])->name('psych.completed');
 
 // Production Fallback Route for Storage Files (prevents 404 if storage:link is missing on production server)
 Route::get('/storage/{path}', function ($path) {
@@ -56,8 +70,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::put('/socios/{member}', [AdminMemberController::class, 'update'])->name('members.update');
     Route::delete('/socios/{member}', [AdminMemberController::class, 'destroy'])->name('members.destroy');
 
-    // Member Applications Management
+    // Member Applications & Psychological Reports Management
     Route::get('/solicitudes', [AdminMemberApplicationController::class, 'index'])->name('applications.index');
+    Route::get('/solicitudes/{application}/informe-psicologico', [AdminMemberApplicationController::class, 'psychReport'])->name('applications.psych_report');
+    Route::post('/solicitudes/{application}/generar-test', [AdminMemberApplicationController::class, 'generateTestToken'])->name('applications.generate_test');
     Route::post('/solicitudes/{application}/aprobar', [AdminMemberApplicationController::class, 'approve'])->name('applications.approve');
     Route::post('/solicitudes/{application}/rechazar', [AdminMemberApplicationController::class, 'reject'])->name('applications.reject');
     Route::delete('/solicitudes/{application}', [AdminMemberApplicationController::class, 'destroy'])->name('applications.destroy');

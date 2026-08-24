@@ -58,6 +58,23 @@ class MemberApplicationController extends Controller
             ->with('success', "¡Postulación de {$member->full_name} aprobada con éxito! Se ha creado su perfil público y generado su credencial QR SEC.");
     }
 
+    public function psychReport(MemberApplication $application)
+    {
+        return view('admin.applications.psych_report', compact('application'));
+    }
+
+    public function generateTestToken(MemberApplication $application)
+    {
+        if (!$application->test_token) {
+            $application->update([
+                'test_token' => Str::random(32),
+                'psych_status' => 'pending',
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Enlace de Test Psicológico generado: ' . $application->test_url);
+    }
+
     public function reject(MemberApplication $application)
     {
         $application->update(['status' => 'rejected']);
