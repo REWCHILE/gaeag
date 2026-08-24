@@ -447,12 +447,12 @@
         .then(res => res.json())
         .then(data => {
             this.loading = false;
-            if(data.success && data.test_url) {
-                alert('¡Paso 1 completado! A continuación responderás el Test Psicológico y Ético-Laboral de Admisión.');
-                window.location.href = data.test_url;
-            } else if(data.success) {
-                alert('¡Postulación enviada exitosamente! El administrador revisará tus antecedentes.');
+            if(data.success) {
+                alert('¡Postulación enviada exitosamente! Tu solicitud ha ingresado a la Comisión de Admisión. El Administrador revisará tus antecedentes y te enviará la activación para el Test Psicológico de Admisión por WhatsApp/Correo.');
                 this.modalOpen = false;
+                this.form = { full_name: '', rut: '', sec_licence: '', category: 'Gas', class: 'Clase B SEC', phone: '', email: '', city: 'Santiago', region: 'Región Metropolitana de Santiago', bio: '' };
+            } else {
+                alert(data.message || 'Error enviando la postulación. Inténtalo de nuevo.');
             }
         })
         .catch(err => {

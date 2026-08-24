@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Panel de Administración - GAE AG')</title>
+    
+    <!-- Official Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.png') }}?v=2026">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2026">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}?v=2026">
 
     <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -25,14 +25,14 @@ class MemberApplicationController extends Controller
 
         $validated['test_token'] = Str::random(32);
         $validated['psych_status'] = 'pending';
+        $validated['status'] = 'pending';
 
         $application = MemberApplication::create($validated);
 
         return response()->json([
             'success' => true,
-            'message' => '¡Paso 1 completado! A continuación debes responder el Test Psicológico y Ético-Laboral de Admisión.',
+            'message' => '¡Postulación enviada exitosamente! Tu solicitud ha ingresado a la Comisión de Admisión de GAE AG. El Administrador revisará tus antecedentes y te enviará la activación para el Test Psicológico de Admisión si tu perfil califica.',
             'application' => $application,
-            'test_url' => route('psych.test', ['token' => $application->test_token]),
         ]);
     }
 }
