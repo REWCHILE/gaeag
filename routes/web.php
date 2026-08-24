@@ -24,6 +24,20 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profesionales/{slug}', [MemberPublicController::class, 'show'])->name('members.public_show');
 Route::post('/postular-socio', [MemberApplicationController::class, 'store'])->name('members.apply_store');
 
+// Production Fallback Route for Storage Files (prevents 404 if storage:link is missing on production server)
+Route::get('/storage/{path}', function ($path) {
+    $publicFile = public_path($path);
+    $storageFile = storage_path('app/public/' . $path);
+
+    if (file_exists($publicFile)) {
+        return response()->file($publicFile);
+    }
+    if (file_exists($storageFile)) {
+        return response()->file($storageFile);
+    }
+    abort(404);
+})->where('path', '.+')->name('storage.fallback');
+
 // Authentication Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

@@ -10,11 +10,11 @@ class QrCodeService
 {
     /**
      * Generates an official SEC-styled PNG QR code with centered SEC badge
-     * and blue corner dots, saving it to public storage.
+     * and blue corner dots, saving it to public storage and public assets.
      *
      * @param string $url Target member URL
      * @param string $filename Member slug filename
-     * @return string Relative path in public storage (e.g. qrcodes/domingo-isain.png)
+     * @return string Relative path (e.g. qrcodes/domingo-isain.png)
      */
     public function generateForMemberUrl(string $url, string $filename): string
     {
@@ -81,7 +81,7 @@ class QrCodeService
             imagestring($qrImage, 5, (int)($logoX + $logoWidth / 4), (int)($logoY + $logoHeight / 3), 'SEC', $black);
         }
 
-        // Save to public storage
+        // Save to public storage and direct public directory for production fallback
         $relativePath = "qrcodes/{$filename}.png";
         
         ob_start();
@@ -91,6 +91,19 @@ class QrCodeService
 
         Storage::disk('public')->put($relativePath, $imageData);
 
+        // Ensure file exists in public/qrcodes/
+        $publicDir = public_path('qrcodes');
+        if (!file_exists($publicDir)) {
+            @mkdir($publicDir, 0777, true);
+        }
+        @file_put_contents(public_path($relativePath), $imageData);
+
         return $relativePath;
+    }
+
+    public function generateSecQrCode($member): string
+    {
+        $targetUrl = $member->qr_target_url;
+        return $this->generateForMemberUrl($targetUrl, $member->slug);
     }
 }

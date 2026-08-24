@@ -53,7 +53,20 @@ class Member extends Model
     public function getPhotoUrlAttribute(): string
     {
         if ($this->photo_path) {
-            return asset('storage/' . $this->photo_path);
+            if (str_starts_with($this->photo_path, 'http://') || str_starts_with($this->photo_path, 'https://')) {
+                return $this->photo_path;
+            }
+            $cleanPath = ltrim($this->photo_path, '/');
+            if (file_exists(public_path($cleanPath))) {
+                return asset($cleanPath);
+            }
+            if (file_exists(public_path('images/' . basename($cleanPath)))) {
+                return asset('images/' . basename($cleanPath));
+            }
+            if (file_exists(public_path('images/members/' . basename($cleanPath)))) {
+                return asset('images/members/' . basename($cleanPath));
+            }
+            return asset('storage/' . $cleanPath);
         }
         return 'https://ui-avatars.com/api/?name=' . urlencode($this->full_name) . '&background=2a81ba&color=ffffff&size=256';
     }
@@ -61,7 +74,17 @@ class Member extends Model
     public function getQrCodeUrlAttribute(): ?string
     {
         if ($this->qr_code_path) {
-            return asset('storage/' . $this->qr_code_path);
+            if (str_starts_with($this->qr_code_path, 'http://') || str_starts_with($this->qr_code_path, 'https://')) {
+                return $this->qr_code_path;
+            }
+            $cleanPath = ltrim($this->qr_code_path, '/');
+            if (file_exists(public_path($cleanPath))) {
+                return asset($cleanPath);
+            }
+            if (file_exists(public_path('qrcodes/' . basename($cleanPath)))) {
+                return asset('qrcodes/' . basename($cleanPath));
+            }
+            return asset('storage/' . $cleanPath);
         }
         return null;
     }

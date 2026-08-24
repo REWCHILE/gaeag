@@ -26,14 +26,14 @@
             <div class="space-y-4">
                 <div>
                     <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required value="{{ old('email', 'admin@gae-ag.cl') }}" 
+                    <input id="email" name="email" type="email" autocomplete="email" required value="{{ old('email') }}" 
                            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue transition-all" 
-                           placeholder="admin@gae-ag.cl">
+                           placeholder="tu-correo@gae-ag.cl">
                 </div>
 
                 <div>
                     <label for="password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Contraseña</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required value="password123"
+                    <input id="password" name="password" type="password" autocomplete="current-password" required
                            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue transition-all" 
                            placeholder="••••••••">
                 </div>
@@ -50,10 +50,6 @@
                 Iniciar Sesión en Panel Admin
             </button>
         </form>
-
-        <div class="pt-4 border-t border-slate-100 text-center text-xs text-slate-400">
-            Credenciales por defecto: <strong>admin@gae-ag.cl</strong> / <strong>password123</strong>
-        </div>
 
     </div>
 </div>
