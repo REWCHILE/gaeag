@@ -4,15 +4,141 @@
 
 @section('admin_content')
 
-<div class="space-y-8">
+<div class="space-y-8" x-data="{ newCandidateModal: false }">
     
-    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
             <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
                 Filtro de Admisión & Evaluación de Especialistas
             </span>
             <h2 class="text-2xl font-black text-slate-900 mt-2">Solicitudes de Ingreso al Gremio</h2>
             <p class="text-xs text-slate-500">Revisa el informe técnico y el <strong>Test Psicológico / Ético-Laboral</strong> de cada postulante antes de aprobar su incorporación oficial a GAE AG.</p>
+        </div>
+
+        <button type="button" @click="newCandidateModal = true"
+                class="px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs shadow-md flex items-center gap-2 transition-all shrink-0">
+            <span>+</span>
+            <span>Registrar Nuevo Postulante & Enviar Test</span>
+        </button>
+    </div>
+
+    <!-- Quick Modal to Register Applicant directly from Admin -->
+    <div x-cloak x-show="newCandidateModal" class="relative z-50" role="dialog" aria-modal="true">
+        <div x-show="newCandidateModal" 
+             x-transition:enter="transition-opacity ease-linear duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition-opacity ease-linear duration-300"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             @click="newCandidateModal = false" 
+             class="fixed inset-0 bg-slate-950/70 backdrop-blur-md"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto flex items-center justify-center p-4">
+            <div x-show="newCandidateModal" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 text-slate-800 text-xs">
+                
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-wider text-emerald-600">Registro Administrativo</span>
+                        <h3 class="text-xl font-black text-slate-900">Registrar Postulante para Test Psicológico</h3>
+                    </div>
+                    <button type="button" @click="newCandidateModal = false" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 text-sm font-bold">
+                        ✕
+                    </button>
+                </div>
+
+                <form action="{{ route('admin.applications.store') }}" method="POST" class="space-y-4">
+                    @csrf
+
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Nombre Completo del Profesional (*):</label>
+                        <input type="text" name="full_name" required placeholder="Ej: Juan Carlos Pérez Soto" 
+                               class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">RUT (*):</label>
+                            <input type="text" name="rut" required placeholder="Ej: 14.892.341-2" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Teléfono / WhatsApp (*):</label>
+                            <input type="text" name="phone" required placeholder="Ej: +56 9 1234 5678" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Correo Electrónico (*):</label>
+                            <input type="email" name="email" required placeholder="correo@ejemplo.cl" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Licencia SEC (Opcional):</label>
+                            <input type="text" name="sec_licence" placeholder="Ej: SEC-GAS-0017" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Especialidad (*):</label>
+                            <select name="category" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                                <option value="Gas">Gas</option>
+                                <option value="Agua">Agua</option>
+                                <option value="Energía">Energía</option>
+                                <option value="Gas, Agua y Energía">Integral (Gas, Agua y Energía)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Categoría SEC (*):</label>
+                            <select name="class" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                                <option value="Clase B SEC">Clase B SEC</option>
+                                <option value="Clase A SEC">Clase A SEC</option>
+                                <option value="Clase C SEC">Clase C SEC</option>
+                                <option value="Clase D SEC">Clase D SEC</option>
+                                <option value="En Trámite">En Trámite</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Ciudad / Comuna (*):</label>
+                            <input type="text" name="city" required value="Santiago" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Región (*):</label>
+                            <input type="text" name="region" required value="Región Metropolitana de Santiago" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-medium focus:ring-2 focus:ring-gae-green outline-none">
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+                        <button type="button" @click="newCandidateModal = false" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold shadow-md">
+                            Guardar & Generar Enlace de Test
+                        </button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
 
@@ -33,6 +159,13 @@
                 </thead>
                 <tbody class="divide-y divide-slate-100">
                     @forelse($applications as $app)
+                        @php
+                            $cleanPhone = preg_replace('/[^0-9]/', '', $app->phone);
+                            $inviteMsg = "Hola {$app->full_name}, te saludamos desde la directiva de la Asociación Gremial GAE AG. Para continuar con tu proceso de incorporación al Gremio, por favor responde tu Test Psicológico y Ético-Laboral de Admisión en el siguiente enlace seguro:\n\n"
+                                       . "👉 {$app->test_url}\n\n"
+                                       . "Quedamos atentos a tus resultados para la revisión final.";
+                            $waInviteUrl = "https://wa.me/{$cleanPhone}?text=" . urlencode($inviteMsg);
+                        @endphp
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-4 py-3 font-bold text-slate-900">
                                 <span class="text-sm font-bold block">{{ $app->full_name }}</span>
@@ -58,16 +191,21 @@
                                         <span class="text-[10px] text-gae-blue font-bold block mt-0.5 group-hover:underline">Ver Informe Completo &rarr;</span>
                                     </a>
                                 @else
-                                    <div class="space-y-1">
-                                        <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-bold text-[10px]">
+                                    <div class="space-y-1.5">
+                                        <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[10px] inline-block">
                                             ⏳ Test Pendiente
                                         </span>
-                                        @if($app->test_token)
-                                            <button type="button" onclick="navigator.clipboard.writeText('{{ $app->test_url }}'); alert('Enlace de test copiado al portapapeles.');" 
-                                                    class="text-[10px] text-slate-500 hover:text-slate-800 underline block font-semibold">
-                                                Copiar Enlace Test
+                                        
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <a href="{{ $waInviteUrl }}" target="_blank" 
+                                               class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] inline-flex items-center gap-1 shadow-xs">
+                                                <span>📲 Enviar por WhatsApp</span>
+                                            </a>
+                                            <button type="button" onclick="navigator.clipboard.writeText('{{ $app->test_url }}'); alert('Enlace copiado al portapapeles: {{ $app->test_url }}');" 
+                                                    class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[10px]">
+                                                📋 Copiar Link
                                             </button>
-                                        @endif
+                                        </div>
                                     </div>
                                 @endif
                             </td>

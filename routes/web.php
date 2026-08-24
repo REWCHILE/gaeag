@@ -72,6 +72,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Member Applications & Psychological Reports Management
     Route::get('/solicitudes', [AdminMemberApplicationController::class, 'index'])->name('applications.index');
+    Route::post('/solicitudes', [AdminMemberApplicationController::class, 'store'])->name('applications.store');
     Route::get('/solicitudes/{application}/informe-psicologico', [AdminMemberApplicationController::class, 'psychReport'])->name('applications.psych_report');
     Route::post('/solicitudes/{application}/generar-test', [AdminMemberApplicationController::class, 'generateTestToken'])->name('applications.generate_test');
     Route::post('/solicitudes/{application}/aprobar', [AdminMemberApplicationController::class, 'approve'])->name('applications.approve');
