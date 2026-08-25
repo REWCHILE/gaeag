@@ -14,6 +14,7 @@ class ContentGrid extends Model
         'category',
         'frequency',
         'scheduled_date',
+        'scheduled_at',
         'status',
         'bulletin_id',
         'notes',
@@ -21,6 +22,7 @@ class ContentGrid extends Model
 
     protected $casts = [
         'scheduled_date' => 'date',
+        'scheduled_at' => 'datetime',
     ];
 
     public function bulletin()

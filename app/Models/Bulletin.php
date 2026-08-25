@@ -14,6 +14,7 @@ class Bulletin extends Model
         'subject',
         'content_html',
         'status',
+        'scheduled_at',
         'category',
         'ai_prompt_used',
         'sent_count',
@@ -22,6 +23,7 @@ class Bulletin extends Model
     ];
 
     protected $casts = [
+        'scheduled_at' => 'datetime',
         'sent_at' => 'datetime',
     ];
 

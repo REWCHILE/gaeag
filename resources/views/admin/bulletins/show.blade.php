@@ -23,12 +23,22 @@
             <p class="text-xs text-slate-500 font-medium">Asunto: <strong>{{ $bulletin->subject }}</strong></p>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex flex-wrap items-center gap-3">
             @if($bulletin->status !== 'sent')
+                <!-- Schedule form inline -->
+                <form action="{{ route('admin.bulletins.schedule', $bulletin) }}" method="POST" class="flex items-center gap-2 bg-slate-50 p-1.5 rounded-2xl border border-slate-200">
+                    @csrf
+                    <input type="date" name="scheduled_date" value="{{ $bulletin->scheduled_at ? $bulletin->scheduled_at->format('Y-m-d') : now('America/Santiago')->toDateString() }}" required class="px-3 py-1.5 rounded-xl border border-slate-300 text-xs font-bold">
+                    <input type="time" name="scheduled_time" value="{{ $bulletin->scheduled_at ? $bulletin->scheduled_at->format('H:i') : '09:00' }}" required class="px-3 py-1.5 rounded-xl border border-slate-300 text-xs font-bold">
+                    <button type="submit" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm">
+                        📅 Programar por Cron
+                    </button>
+                </form>
+
                 <form action="{{ route('admin.bulletins.process_sends', $bulletin) }}" method="POST">
                     @csrf
                     <button type="submit" class="px-5 py-2.5 rounded-xl bg-gae-green hover:bg-gae-green-dark text-white font-bold text-xs shadow-md transition-all flex items-center gap-2">
-                        <span>⚡ Procesar Siguiente Lote de Envíos (Safe Rate-Limited)</span>
+                        <span>⚡ Enviar Ahora</span>
                     </button>
                 </form>
             @endif
@@ -37,7 +47,7 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="px-4 py-2.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 font-bold text-xs">
-                    Eliminar Boletín
+                    Eliminar
                 </button>
             </form>
         </div>

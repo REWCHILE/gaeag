@@ -89,12 +89,15 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('/boletines/generar-ia', [AdminBulletinController::class, 'generateAi'])->name('bulletins.generate_ai');
     Route::post('/boletines', [AdminBulletinController::class, 'store'])->name('bulletins.store');
     Route::get('/boletines/{bulletin}', [AdminBulletinController::class, 'show'])->name('bulletins.show');
+    Route::post('/boletines/{bulletin}/programar', [AdminBulletinController::class, 'schedule'])->name('bulletins.schedule');
     Route::post('/boletines/{bulletin}/procesar-envios', [AdminBulletinController::class, 'processSends'])->name('bulletins.process_sends');
     Route::delete('/boletines/{bulletin}', [AdminBulletinController::class, 'destroy'])->name('bulletins.destroy');
 
     // AI Content Grid Scheduler
     Route::get('/grilla-contenido', [AdminContentGridController::class, 'index'])->name('content_grid.index');
     Route::post('/grilla-contenido/generar', [AdminContentGridController::class, 'generateGrid'])->name('content_grid.generate');
+    Route::post('/grilla-contenido/{item}/programar', [AdminContentGridController::class, 'schedule'])->name('content_grid.schedule');
+    Route::post('/grilla-contenido/ejecutar-cron', [AdminContentGridController::class, 'runCronNow'])->name('content_grid.run_cron');
     Route::post('/grilla-contenido/{item}/convertir', [AdminContentGridController::class, 'convertToBulletin'])->name('content_grid.convert');
     Route::delete('/grilla-contenido/{item}', [AdminContentGridController::class, 'destroy'])->name('content_grid.destroy');
 

@@ -12,7 +12,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // Revisa cada minuto si hay boletines o contenidos programados listos para despachar (Hora Chile)
+        $schedule->command('bulletins:dispatch-scheduled')
+            ->everyMinute()
+            ->withoutOverlapping()
+            ->runInBackground();
     }
 
     /**

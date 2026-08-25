@@ -97,6 +97,24 @@ class BulletinController extends Controller
             ->with('success', "Procesado lote de envíos. Procesados: {$result['processed']}, Restantes: {$result['remaining']}.");
     }
 
+    public function schedule(Request $request, Bulletin $bulletin)
+    {
+        $validated = $request->validate([
+            'scheduled_date' => 'required|date',
+            'scheduled_time' => 'required|string',
+        ]);
+
+        $dateTime = \Carbon\Carbon::parse("{$validated['scheduled_date']} {$validated['scheduled_time']}:00", 'America/Santiago');
+
+        $bulletin->update([
+            'scheduled_at' => $dateTime,
+            'status' => 'scheduled',
+        ]);
+
+        return redirect()->route('admin.bulletins.show', $bulletin)
+            ->with('success', "Boletín programado para el {$dateTime->format('d/m/Y \a \l\a\s H:i')} (Hora Chile). Se despachará automáticamente por cron.");
+    }
+
     public function destroy(Bulletin $bulletin)
     {
         $title = $bulletin->title;
