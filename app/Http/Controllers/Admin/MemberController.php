@@ -141,6 +141,18 @@ class MemberController extends Controller
             ->with('success', "Datos de '{$member->full_name}' actualizados correctamente.");
     }
 
+    public function regenerateAllQrs(QrCodeService $qrService)
+    {
+        $members = Member::all();
+        $count = 0;
+        foreach ($members as $member) {
+            $qrService->generateSecQrCode($member);
+            $count++;
+        }
+
+        return redirect()->back()->with('success', "¡Se regeneraron exitosamente los códigos QR de los {$count} socios del gremio!");
+    }
+
     public function destroy(Member $member)
     {
         $name = $member->full_name;

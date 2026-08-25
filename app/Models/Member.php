@@ -71,7 +71,7 @@ class Member extends Model
         return 'https://ui-avatars.com/api/?name=' . urlencode($this->full_name) . '&background=2a81ba&color=ffffff&size=256';
     }
 
-    public function getQrCodeUrlAttribute(): ?string
+    public function getQrCodeUrlAttribute(): string
     {
         if ($this->qr_code_path) {
             if (str_starts_with($this->qr_code_path, 'http://') || str_starts_with($this->qr_code_path, 'https://')) {
@@ -84,8 +84,12 @@ class Member extends Model
             if (file_exists(public_path('qrcodes/' . basename($cleanPath)))) {
                 return asset('qrcodes/' . basename($cleanPath));
             }
-            return asset('storage/' . $cleanPath);
+            if (file_exists(storage_path('app/public/' . $cleanPath))) {
+                return asset('storage/' . $cleanPath);
+            }
         }
-        return null;
+        
+        // Dynamic HTTP fallback route
+        return route('members.qr_image', ['slug' => $this->slug]);
     }
 }

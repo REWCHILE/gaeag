@@ -63,4 +63,36 @@ class MemberPublicController extends Controller
 
         return view('members.show', compact('member', 'profileSchema'));
     }
+
+    public function qrImage(string $slug, QrCodeService $qrService)
+    {
+        $member = Member::where('slug', $slug)->firstOrFail();
+
+        // If static file exists, serve it directly
+        $staticFile = public_path("qrcodes/{$member->slug}.png");
+        if (file_exists($staticFile)) {
+            return response()->file($staticFile, [
+                'Content-Type' => 'image/png',
+                'Cache-Control' => 'public, max-age=86400',
+            ]);
+        }
+
+        // Generate and save, then serve
+        $qrPath = $qrService->generateSecQrCode($member);
+        $generatedFile = public_path($qrPath);
+
+        if (file_exists($generatedFile)) {
+            return response()->file($generatedFile, [
+                'Content-Type' => 'image/png',
+                'Cache-Control' => 'public, max-age=86400',
+            ]);
+        }
+
+        // Direct in-memory stream fallback
+        $rawPng = $qrService->renderRawQr($member->qr_target_url);
+        return response($rawPng, 200, [
+            'Content-Type' => 'image/png',
+            'Cache-Control' => 'public, max-age=86400',
+        ]);
+    }
 }

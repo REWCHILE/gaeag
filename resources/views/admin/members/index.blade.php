@@ -12,9 +12,19 @@
             <p class="text-xs text-slate-500">Administración de credenciales, licencias SEC y generación de QR</p>
         </div>
 
-        <a href="{{ route('admin.members.create') }}" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition-all">
-            + Registrar Nuevo Socio
-        </a>
+        <div class="flex items-center gap-3">
+            <form action="{{ route('admin.members.regenerate_all_qrs') }}" method="POST" onsubmit="return confirm('¿Regenerar dinámicamente los códigos QR SEC de todos los socios?');">
+                @csrf
+                <button type="submit" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5">
+                    <span>🔄</span>
+                    <span>Regenerar Códigos QR SEC</span>
+                </button>
+            </form>
+
+            <a href="{{ route('admin.members.create') }}" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition-all">
+                + Registrar Nuevo Socio
+            </a>
+        </div>
     </div>
 
     <!-- Search Form -->

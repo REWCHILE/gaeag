@@ -31,6 +31,7 @@ Route::get('/robots.txt', [PageController::class, 'robots'])->name('robots');
 
 // Public Member Profiles & Applications
 Route::get('/profesionales/{slug}', [MemberPublicController::class, 'show'])->name('members.public_show');
+Route::get('/profesionales/{slug}/qr.png', [MemberPublicController::class, 'qrImage'])->name('members.qr_image');
 Route::post('/postular-socio', [MemberApplicationController::class, 'store'])->name('members.apply_store');
 
 // Psychological Admission Evaluation (Paso 2)
@@ -65,6 +66,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/socios', [AdminMemberController::class, 'index'])->name('members.index');
     Route::get('/socios/crear', [AdminMemberController::class, 'create'])->name('members.create');
     Route::post('/socios', [AdminMemberController::class, 'store'])->name('members.store');
+    Route::post('/socios-regenerar-qr', [AdminMemberController::class, 'regenerateAllQrs'])->name('members.regenerate_all_qrs');
     Route::get('/socios/{member}', [AdminMemberController::class, 'show'])->name('members.show');
     Route::get('/socios/{member}/editar', [AdminMemberController::class, 'edit'])->name('members.edit');
     Route::put('/socios/{member}', [AdminMemberController::class, 'update'])->name('members.update');
