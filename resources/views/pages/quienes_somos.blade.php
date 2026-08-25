@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Quiénes Somos & Historia Gremial (2017 - 2026) - GAE AG | Gas, Agua y Energía')
-@section('meta_description', 'Recorre la historia visual e interactiva de GAE AG desde su fundación en 2017 por Domingo Isaín Plaza Caamaño hasta el 2026. Conoce nuestros hitos, estatutos y misión en Chile.')
+@section('meta_description', 'Recorre la historia visual interactiva de GAE AG. La idea nació en 2017 y fue fundada y legalizada el 29 de Septiembre de 2018 por Domingo Isaín Plaza Caamaño (RUT 65.173.361-8).')
 
 @section('content')
 
@@ -13,7 +13,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 backdrop-blur-md">
             <span class="w-2 h-2 rounded-full bg-gae-green animate-pulse"></span>
-            Fundada en el año 2017 &bull; Personalidad Jurídica y Acreditación Gremial
+            Idea nacida en 2017 &bull; Fundada y Legalizada el 29 de Septiembre de 2018 &bull; RUT 65.173.361-8
         </div>
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
@@ -21,7 +21,7 @@
         </h1>
 
         <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
-            Somos la Asociación Gremial dedicada a elevar el estándar técnico, ético y humano de los especialistas autorizados por la Superintendencia de Electricidad y Combustibles (SEC).
+            <strong>Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.</strong> dedicada a elevar el estándar técnico, ético y humano de los especialistas autorizados por la Superintendencia de Electricidad y Combustibles (SEC).
         </p>
 
         <div class="flex flex-wrap justify-center gap-4 pt-4">
@@ -35,7 +35,7 @@
     </div>
 </section>
 
-<!-- History & Founder Highlight -->
+<!-- History & Legal Identity -->
 <section class="py-20 bg-white text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -48,33 +48,37 @@
                     Nacidos para Proteger a la Comunidad y Dignificar el Oficio Técnico
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    La <strong>Asociación Gremial de Profesionales del Gas, Agua y Energía (GAE AG)</strong> fue concebida en el año 2017 por iniciativa de especialistas liderados por <strong>Domingo Isaín Plaza Caamaño</strong>, con el objetivo de agrupar, capacitar y respaldar a los técnicos e instaladores acreditados ante la SEC en todo Chile.
+                    La iniciativa nació en el año <strong>2017</strong> bajo el concepto de <em>Colegio Profesional del Gas, Agua y Energía GAE AG</em>, concebida por especialistas liderados por <strong>Domingo Isaín Plaza Caamaño</strong>.
                 </p>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Frente a los riesgos de la informalidad y la necesidad de elevar la seguridad en instalaciones de fluidos combustibles, redes sanitarias y sistemas energéticos, GAE AG se ha consolidado como un referente de autorregulación ética y excelencia técnica.
+                    El <strong>29 de Septiembre de 2018</strong> se constituye y legaliza formalmente ante el Ministerio de Economía y el SII la <strong>Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G. (RUT 65.173.361-8)</strong>, consolidándose como un referente nacional de autorregulación ética, certificación permanente y respaldo técnico bajo los decretos <strong>DS 66</strong> y <strong>DS 222</strong> de la SEC.
                 </p>
 
-                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <span class="text-3xl font-black text-emerald-600">2017</span>
-                        <p class="text-xs font-bold text-slate-600 mt-1">Año de Fundación Oficial</p>
+                        <span class="text-2xl sm:text-3xl font-black text-emerald-600">2017</span>
+                        <p class="text-[11px] font-bold text-slate-600 mt-1">Origen de la Idea</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <span class="text-3xl font-black text-sky-600">100%</span>
-                        <p class="text-xs font-bold text-slate-600 mt-1">Socios Acreditados SEC</p>
+                        <span class="text-2xl sm:text-3xl font-black text-sky-600">2018</span>
+                        <p class="text-[11px] font-bold text-slate-600 mt-1">Fundación & Legalización</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 col-span-2 sm:col-span-1">
+                        <span class="text-2xl sm:text-3xl font-black text-amber-600">65.173.361-8</span>
+                        <p class="text-[11px] font-bold text-slate-600 mt-1">RUT Oficial Gremio</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Founder Card -->
-            <div class="lg:col-span-6">
+            <!-- Founder & Legal Identity Card -->
+            <div class="lg:col-span-6 space-y-4">
                 <div class="p-8 rounded-3xl bg-slate-950 text-white shadow-2xl border border-slate-800 relative overflow-hidden space-y-6">
                     <div class="flex items-center gap-4">
                         <img src="{{ asset('images/members/domingo-isain.png') }}" alt="Domingo Isaín Plaza Caamaño" class="w-20 h-20 rounded-2xl object-cover border-2 border-emerald-400/50 shadow-md">
                         <div>
                             <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-extrabold uppercase">Presidente & Fundador</span>
                             <h3 class="text-xl font-black text-white mt-1">Domingo Isaín Plaza Caamaño</h3>
-                            <p class="text-xs text-slate-400 font-mono">Licencia SEC: SEC-GAS-AGUA-0017 &bull; Clase A</p>
+                            <p class="text-xs text-slate-400 font-mono">RUT: 12.738.961-6 &bull; Licencia SEC Clase A</p>
                         </div>
                     </div>
 
@@ -82,9 +86,24 @@
                         "Un instalador de gas, agua o energía tiene en sus manos la vida, la seguridad y el patrimonio de las familias. Por eso nuestro gremio exige excelencia, ética y capacitación sin descanso."
                     </blockquote>
 
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                        <span>Directorio Nacional GAE AG</span>
-                        <span class="text-emerald-400 font-bold">Santiago, Chile</span>
+                    <!-- Official Legal Card -->
+                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] space-y-1.5 text-slate-300">
+                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                            <span class="text-slate-400 font-semibold">Razón Social:</span>
+                            <span class="font-bold text-white text-right">Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                            <span class="text-slate-400 font-semibold">RUT Gremial:</span>
+                            <span class="font-mono font-bold text-emerald-400">65.173.361-8</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                            <span class="text-slate-400 font-semibold">Constitución Legal:</span>
+                            <span class="font-bold text-slate-200">29 de Septiembre de 2018</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400 font-semibold">Casa Matriz:</span>
+                            <span class="font-bold text-slate-200">Providencia 1208 Of. 207, Providencia, Santiago</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,18 +119,18 @@
             milestones: [
                 {
                     year: 2017,
-                    icon: '🏛️',
-                    tag: 'Fundación & Origen',
-                    title: 'Nacimiento de GAE AG',
-                    desc: 'Domingo Isaín Plaza Caamaño convoca a los primeros instaladores autorizados SEC para fundar una asociación gremial que defienda la dignidad del oficio técnico y la seguridad comunitaria.',
+                    icon: '💡',
+                    tag: 'Origen de la Iniciativa',
+                    title: 'Nacimiento de la Idea: Colegio Profesional GAE AG',
+                    desc: 'La idea nace en 2017 concebida por Domingo Isaín Plaza Caamaño, proyectando la creación de un colegio gremial y red de apoyo técnico que agrupe a los especialistas en Gas, Agua y Energía para dignificar la profesión y defender la seguridad comunitaria.',
                     color: 'emerald'
                 },
                 {
                     year: 2018,
-                    icon: '📜',
-                    tag: 'Autorregulación Ética',
-                    title: 'Código de Ética y Sello de Calidad',
-                    desc: 'Se redacta el primer estatuto de autorregulación gremial, fijando estándares de honestidad en presupuestos, calidad de materiales y cero tolerancia a la negligencia.',
+                    icon: '🏛️',
+                    tag: 'Fundación & Legalización',
+                    title: 'Fundación Oficial de GAE A.G. (29 Septiembre 2018)',
+                    desc: 'El 29 de Septiembre de 2018 se constituye y legaliza formalmente la Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G. (RUT 65.173.361-8) ante el Ministerio de Economía y el SII, con sede matriz en Providencia 1208 Of. 207, Santiago.',
                     color: 'sky'
                 },
                 {
@@ -119,7 +138,7 @@
                     icon: '📐',
                     tag: 'Normativa SEC DS66',
                     title: 'Capacitación en Reglamento de Gas DS 66',
-                    desc: 'Jornadas intensivas de instrucción técnica sobre el Decreto Supremo 66 de la SEC para regularización de Sellos Verdes en edificios y casas particulares.',
+                    desc: 'Jornadas intensivas de instrucción técnica sobre el Decreto Supremo 66 de la SEC para regularización de Sellos Verdes en edificios, condominios y casas particulares.',
                     color: 'amber'
                 },
                 {
@@ -135,7 +154,7 @@
                     icon: '☀️',
                     tag: 'Transición Energética',
                     title: 'Integración de Energías Renovables',
-                    desc: 'Se formaliza el área de Energía Solar Térmica y Fotovoltaica, capacitando a los socios en eficiencia energética y sustentabilidad ambiental.',
+                    desc: 'Se formaliza la división de Energía Solar Térmica y Fotovoltaica, capacitando a los socios en eficiencia energética, sustentabilidad ambiental y nuevas tecnologías.',
                     color: 'amber'
                 },
                 {
@@ -143,7 +162,7 @@
                     icon: '🔍',
                     tag: 'Prevención Comunitaria',
                     title: 'Campaña Nacional Sello Verde Seguro',
-                    desc: 'Operativos técnicos de inspección y corrección de sellos rojos/amarillos en condominios, previniendo intoxicaciones por monóxido de carbono.',
+                    desc: 'Operativos técnicos de inspección y corrección de sellos rojos/amarillos en condominios, previniendo intoxicaciones por monóxido de carbono e incendios.',
                     color: 'sky'
                 },
                 {
@@ -159,7 +178,7 @@
                     icon: '🤝',
                     tag: 'Actualización DS 222',
                     title: 'Nueva Normativa SEC & Cobertura Nacional',
-                    desc: 'Actualización técnica permanente en el Decreto Supremo 222 y consolidación de redes de apoyo y proyectos conjuntos entre instaladores de todas las regiones.',
+                    desc: 'Actualización técnica permanente en el Decreto Supremo 222 y consolidación de redes de apoyo y proyectos conjuntos entre instaladores de todas las regiones de Chile.',
                     color: 'sky'
                 },
                 {
@@ -173,7 +192,7 @@
                 {
                     year: 2026,
                     icon: '🧠',
-                    tag: 'Presente & Futuro',
+                    tag: 'Presente & Admisión de Excelencia',
                     title: 'Filtro Psicológico y Ético de Admisión',
                     desc: 'GAE AG se posiciona como el gremio más confiable de Chile incorporando un test psicológico y de competencias humanas para proteger a los clientes de malos ratos y garantizar excelencia total.',
                     color: 'emerald'
@@ -204,7 +223,7 @@
                 <span class="bg-gradient-to-r from-emerald-400 via-sky-400 to-amber-400 bg-clip-text text-transparent">(2017 &rarr; 2026)</span>
             </h2>
             <p class="text-slate-400 text-xs sm:text-base leading-relaxed">
-                Haz scroll o presiona los años para recorrer los 10 hitos que forjaron la asociación gremial más respetada de instaladores en Chile.
+                Haz scroll o presiona los años para recorrer los hitos que forjaron la asociación gremial más respetada de instaladores en Chile.
             </p>
         </div>
 
