@@ -140,72 +140,84 @@
                 </div>
             @endif
 
-            <!-- 5 Dimension Progress Bars Breakdown -->
+            <!-- 6 Dimension Progress Bars Breakdown -->
             <div class="space-y-4">
                 <h3 class="text-sm font-black uppercase tracking-wider text-slate-900">
-                    Desglose de Competencias Evaluadas
+                    Desglose de Competencias Evaluadas (6 Pilares Críticos)
                 </h3>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     
                     <!-- Safety -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-800">🛡️ Seguridad Operativa & Normas SEC</span>
+                            <span class="font-bold text-slate-800">🛡️ Normativa SEC & Cero Riesgo</span>
                             <span class="font-black text-slate-900">{{ $application->psych_score_safety ?? 0 }}%</span>
                         </div>
                         <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
                             <div class="bg-emerald-500 h-full rounded-full" style="width: {{ $application->psych_score_safety ?? 0 }}%"></div>
                         </div>
-                        <span class="text-[10px] text-slate-400 block font-medium">Apego estricto a DS66 / DS222 y cero improvisación técnica.</span>
+                        <span class="text-[10px] text-slate-400 block font-medium">Apego estricto a DS66 / DS222 y resistencia a presiones comerciales.</span>
                     </div>
 
                     <!-- Ethics -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-800">⚖️ Ética Profesional & Honestidad</span>
+                            <span class="font-bold text-slate-800">⚖️ Ética & Honestidad Comercial</span>
                             <span class="font-black text-slate-900">{{ $application->psych_score_ethics ?? 0 }}%</span>
                         </div>
                         <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
                             <div class="bg-sky-500 h-full rounded-full" style="width: {{ $application->psych_score_ethics ?? 0 }}%"></div>
                         </div>
-                        <span class="text-[10px] text-slate-400 block font-medium">Transparencia en presupuestos, cobros y responsabilidad.</span>
-                    </div>
-
-                    <!-- Stress -->
-                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-800">🧠 Estabilidad Emocional & Manejo de Estrés</span>
-                            <span class="font-black text-slate-900">{{ $application->psych_score_stress ?? 0 }}%</span>
-                        </div>
-                        <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-                            <div class="bg-indigo-500 h-full rounded-full" style="width: {{ $application->psych_score_stress ?? 0 }}%"></div>
-                        </div>
-                        <span class="text-[10px] text-slate-400 block font-medium">Control de emergencias críticas y serenidad bajo presión.</span>
+                        <span class="text-[10px] text-slate-400 block font-medium">Cobros justos, no firmar a terceros y asunción de daños involuntarios.</span>
                     </div>
 
                     <!-- Service & Conflict Prevention -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-800">🤝 Trato al Cliente & Prevención de Conflictos</span>
+                            <span class="font-bold text-slate-800">🤝 Trato Asertivo & Clientes</span>
                             <span class="font-black text-slate-900">{{ $application->psych_score_service ?? 0 }}%</span>
                         </div>
                         <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
                             <div class="bg-amber-500 h-full rounded-full" style="width: {{ $application->psych_score_service ?? 0 }}%"></div>
                         </div>
-                        <span class="text-[10px] text-slate-400 block font-medium">Comunicación asertiva, empatía y pulcritud en el hogar del cliente.</span>
+                        <span class="text-[10px] text-slate-400 block font-medium">Prevención de conflictos ("malos ratos") y comunicación clara.</span>
+                    </div>
+
+                    <!-- Stress -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-slate-800">🧠 Control Emocional & Estrés</span>
+                            <span class="font-black text-slate-900">{{ $application->psych_score_stress ?? 0 }}%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-indigo-500 h-full rounded-full" style="width: {{ $application->psych_score_stress ?? 0 }}%"></div>
+                        </div>
+                        <span class="text-[10px] text-slate-400 block font-medium">Serenidad bajo fuga violenta, emergencias y tolerancia a frustración.</span>
                     </div>
 
                     <!-- Responsibility -->
-                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 md:col-span-2">
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-800">🌟 Responsabilidad & Prestigio Gremial</span>
+                            <span class="font-bold text-slate-800">🌟 Responsabilidad & Garantías</span>
                             <span class="font-black text-slate-900">{{ $application->psych_score_responsibility ?? 0 }}%</span>
                         </div>
                         <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
                             <div class="bg-gae-green h-full rounded-full" style="width: {{ $application->psych_score_responsibility ?? 0 }}%"></div>
                         </div>
-                        <span class="text-[10px] text-slate-400 block font-medium">Compromiso con el prestigio de GAE AG y capacitación continua.</span>
+                        <span class="text-[10px] text-slate-400 block font-medium">Respuesta inmediata a post-venta y compromiso gremial.</span>
+                    </div>
+
+                    <!-- Lie Scale / Veracity -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-slate-800">🎯 Índice de Autenticidad (Lie Scale)</span>
+                            <span class="font-black text-slate-900">{{ $application->psych_answers['score_lie'] ?? 85 }}%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-purple-500 h-full rounded-full" style="width: {{ $application->psych_answers['score_lie'] ?? 85 }}%"></div>
+                        </div>
+                        <span class="text-[10px] text-slate-400 block font-medium">Control de veracidad y detección de respuestas prefabricadas.</span>
                     </div>
 
                 </div>
@@ -215,14 +227,14 @@
             @if(!empty($application->psych_answers['answers_data']))
                 <div class="space-y-3 pt-4 border-t border-slate-100">
                     <h3 class="text-sm font-black uppercase tracking-wider text-slate-900">
-                        Detalle de Respuestas del Postulante (Escala 1 a 5)
+                        Detalle de las 24 Respuestas del Postulante (Escala 1 a 5)
                     </h3>
                     <div class="overflow-x-auto border border-slate-200 rounded-2xl">
                         <table class="w-full text-left text-xs text-slate-600">
                             <thead class="bg-slate-50 text-slate-700 font-bold uppercase text-[10px] border-b border-slate-200">
                                 <tr>
                                     <th class="px-4 py-3">#</th>
-                                    <th class="px-4 py-3">Pregunta Situacional Evaluada</th>
+                                    <th class="px-4 py-3">Escenario y Dilema Situacional Evaluado</th>
                                     <th class="px-4 py-3">Dimensión</th>
                                     <th class="px-4 py-3 text-center">Puntaje</th>
                                 </tr>
@@ -231,7 +243,12 @@
                                 @foreach($application->psych_answers['answers_data'] as $ans)
                                     <tr class="hover:bg-slate-50">
                                         <td class="px-4 py-2.5 font-mono font-bold text-slate-400">{{ $ans['question_id'] }}</td>
-                                        <td class="px-4 py-2.5 font-medium text-slate-800">{{ $ans['question'] }}</td>
+                                        <td class="px-4 py-2.5">
+                                            @if(!empty($ans['scenario']))
+                                                <span class="font-bold text-slate-900 block">{{ $ans['scenario'] }}</span>
+                                            @endif
+                                            <span class="text-slate-600">{{ $ans['question'] }}</span>
+                                        </td>
                                         <td class="px-4 py-2.5">
                                             <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold text-[10px]">
                                                 {{ ucfirst($ans['dimension']) }}

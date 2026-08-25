@@ -8,13 +8,14 @@
 <section class="py-12 bg-slate-950 text-white min-h-[90vh] relative overflow-hidden" 
          x-data="{
             currentStep: 0,
-            totalSteps: 5,
+            totalSteps: 6,
             steps: [
-                { title: 'Seguridad y Normativa SEC', desc: 'Apego estricto a reglamentos y protocolos de prevención', icon: '🛡️' },
-                { title: 'Estabilidad y Autocontrol', desc: 'Manejo de emergencias, presión y control emocional', icon: '🧠' },
-                { title: 'Ética y Honestidad', desc: 'Transparencia técnica, cobros justos y rectitud profesional', icon: '⚖️' },
-                { title: 'Trato al Cliente y Servicio', desc: 'Prevención de conflictos, empatía y pulcritud en faenas', icon: '🤝' },
-                { title: 'Compromiso Gremial', desc: 'Responsabilidad, puntualidad y prestigio asociativo', icon: '🌟' }
+                { title: 'Normativa SEC & Cero Riesgo', desc: 'Apego estricto a protocolos técnicos y resistencia a la presión', icon: '🛡️' },
+                { title: 'Trato Asertivo & Clientes', desc: 'Prevención de conflictos (\"malos ratos\") y comunicación transparente', icon: '🤝' },
+                { title: 'Ética & Honestidad Comercial', desc: 'Cobros justos, no firmar a terceros y asunción de imprevistos', icon: '⚖️' },
+                { title: 'Control Emocional & Emergencias', desc: 'Serenidad bajo fuego o fuga imprevista y tolerancia a la frustración', icon: '🧠' },
+                { title: 'Garantías & Prestigio Gremial', desc: 'Respuesta post-venta, capacitación y autorregulación gremial', icon: '🌟' },
+                { title: 'Índice de Veracidad & Criterio', desc: 'Control de autenticidad y evaluación de juicio situacional', icon: '🎯' }
             ],
             questions: {{ json_encode($questions) }},
             answers: {},
@@ -142,14 +143,14 @@
         </div>
 
         <!-- Step Indicator Pills -->
-        <div class="grid grid-cols-5 gap-2">
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
             <template x-for="(step, idx) in steps" :key="idx">
                 <div class="p-2 sm:p-3 rounded-2xl border text-center transition-all cursor-pointer"
                      :class="{
                          'bg-gae-blue/20 border-gae-blue text-white shadow-lg': currentStep === idx,
                          'bg-slate-900/60 border-slate-800 text-slate-400 hover:bg-slate-900': currentStep !== idx
                      }"
-                     @click="if(idx <= currentStep || progressPercentage > (idx * 20)) currentStep = idx">
+                     @click="if(idx <= currentStep || progressPercentage > (idx * 16)) currentStep = idx">
                     <span class="text-base sm:text-xl block" x-text="step.icon"></span>
                     <span class="text-[10px] sm:text-xs font-bold hidden sm:block truncate mt-1" x-text="step.title"></span>
                 </div>
@@ -161,7 +162,7 @@
             
             <div class="border-b border-slate-800 pb-4 flex items-center justify-between">
                 <div>
-                    <span class="text-xs font-black uppercase tracking-wider text-gae-blue" x-text="'Dimensión Evaluada #' + (currentStep + 1)"></span>
+                    <span class="text-xs font-black uppercase tracking-wider text-gae-blue" x-text="'Módulo #' + (currentStep + 1) + ' de ' + totalSteps"></span>
                     <h2 class="text-xl sm:text-2xl font-black text-white" x-text="steps[currentStep].title"></h2>
                     <p class="text-xs text-slate-400 mt-0.5" x-text="steps[currentStep].desc"></p>
                 </div>
@@ -186,7 +187,9 @@
                             <span class="px-2.5 py-1 rounded-lg font-black text-xs shrink-0"
                                   :class="answers[q.id] !== undefined ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300'"
                                   x-text="'P' + q.id"></span>
-                            <div class="flex-grow">
+                            <div class="flex-grow space-y-1">
+                                <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[10px] font-black uppercase tracking-wider inline-block" 
+                                      x-show="q.scenario" x-text="q.scenario"></span>
                                 <p class="text-sm sm:text-base font-semibold text-white leading-relaxed" x-text="q.question"></p>
                             </div>
                         </div>
