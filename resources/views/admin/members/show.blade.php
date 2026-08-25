@@ -61,19 +61,16 @@
             <h4 class="font-bold text-sm text-slate-900 uppercase tracking-wider">Código QR Oficial SEC del Socio</h4>
             
             <div class="flex justify-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                @if($member->qr_code_url)
-                    <img src="{{ $member->qr_code_url }}" alt="QR SEC {{ $member->full_name }}" class="w-40 h-40 object-contain rounded-xl border border-slate-200 shadow-sm">
-                @else
-                    <p class="text-xs text-slate-400">QR no generado.</p>
-                @endif
+                <img src="{{ $member->qr_code_url }}" 
+                     onerror="this.onerror=null; this.src='{{ route('members.qr_image', ['slug' => $member->slug]) }}';"
+                     alt="QR SEC {{ $member->full_name }}" 
+                     class="w-40 h-40 object-contain rounded-xl border border-slate-200 shadow-sm bg-white">
             </div>
 
-            @if($member->qr_code_url)
-                <a href="{{ $member->qr_code_url }}" download="QR-SEC-{{ $member->slug }}.png" target="_blank" 
-                   class="w-full py-2 rounded-xl bg-gae-blue hover:bg-gae-blue-dark text-white font-bold text-xs block transition-all shadow-sm">
-                    Descargar Código QR SEC (PNG)
-                </a>
-            @endif
+            <a href="{{ route('members.qr_image', ['slug' => $member->slug]) }}" download="QR-SEC-{{ $member->slug }}.png" target="_blank" 
+               class="w-full py-2 rounded-xl bg-gae-blue hover:bg-gae-blue-dark text-white font-bold text-xs block transition-all shadow-sm">
+                Descargar Código QR SEC (PNG)
+            </a>
         </div>
 
         <!-- Danger Zone -->

@@ -73,6 +73,13 @@ class Member extends Model
 
     public function getQrCodeUrlAttribute(): string
     {
+        // 1. Check if pre-generated file exists in public/qrcodes/
+        $slugName = $this->slug;
+        $directPublicFile = public_path("qrcodes/{$slugName}.png");
+        if (file_exists($directPublicFile)) {
+            return asset("qrcodes/{$slugName}.png");
+        }
+
         if ($this->qr_code_path) {
             if (str_starts_with($this->qr_code_path, 'http://') || str_starts_with($this->qr_code_path, 'https://')) {
                 return $this->qr_code_path;
@@ -81,15 +88,25 @@ class Member extends Model
             if (file_exists(public_path($cleanPath))) {
                 return asset($cleanPath);
             }
-            if (file_exists(public_path('qrcodes/' . basename($cleanPath)))) {
-                return asset('qrcodes/' . basename($cleanPath));
+        }
+
+        // 2. Auto-generate file dynamically on the fly
+        try {
+            $qrService = app(\App\Services\QrCodeService::class);
+            $path = $qrService->generateSecQrCode($this);
+            if (file_exists(public_path($path))) {
+                return asset($path);
             }
-            if (file_exists(storage_path('app/public/' . $cleanPath))) {
-                return asset('storage/' . $cleanPath);
+        } catch (\Throwable $e) {
+            // Fallback to inline Base64 data URI if disk write is restricted
+            try {
+                $rawPng = app(\App\Services\QrCodeService::class)->renderRawQr($this->qr_target_url);
+                return 'data:image/png;base64,' . base64_encode($rawPng);
+            } catch (\Throwable $ex) {
+                // Ignore
             }
         }
-        
-        // Dynamic HTTP fallback route
+
         return route('members.qr_image', ['slug' => $this->slug]);
     }
 }

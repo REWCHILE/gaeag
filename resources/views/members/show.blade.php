@@ -150,11 +150,10 @@
                 </span>
 
                 <div class="flex justify-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                    @if($member->qr_code_url)
-                        <img src="{{ $member->qr_code_url }}" alt="QR SEC {{ $member->full_name }}" class="w-48 h-48 object-contain rounded-xl shadow-sm border border-slate-200">
-                    @else
-                        <p class="text-xs text-slate-400">Generando Código QR SEC...</p>
-                    @endif
+                    <img src="{{ $member->qr_code_url }}" 
+                         onerror="this.onerror=null; this.src='{{ route('members.qr_image', ['slug' => $member->slug]) }}';"
+                         alt="QR SEC {{ $member->full_name }}" 
+                         class="w-48 h-48 object-contain rounded-xl shadow-sm border border-slate-200 bg-white">
                 </div>
 
                 <p class="text-xs text-slate-500">
