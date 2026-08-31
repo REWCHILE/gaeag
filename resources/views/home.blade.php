@@ -4,8 +4,9 @@
 @section('meta_description', 'Sitio oficial de GAE AG, la Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.')
 
 @push('head')
-    <!-- Preload Hero LCP Image -->
-    <link rel="preload" as="image" href="{{ asset('images/slider/hero_gas.webp') }}" type="image/webp" fetchpriority="high">
+    <!-- Preload Responsive Hero LCP Image -->
+    <link rel="preload" as="image" href="{{ asset('images/slider/hero_gas_mobile.webp') }}" type="image/webp" media="(max-width: 640px)" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('images/slider/hero_gas.webp') }}" type="image/webp" media="(min-width: 641px)" fetchpriority="high">
 
     <!-- Inject JSON-LD Schema -->
     <script type="application/ld+json">
@@ -23,20 +24,48 @@
     
     <!-- Hero Background Image Slider Carousel (Vibrant, Clear & Human) -->
     <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
-        <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint) -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-85 transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0': currentSlide !== 0 }"
-             style="background-image: url('{{ asset('images/slider/hero_gas.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+        <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint with Responsive srcset) -->
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-85 overflow-hidden"
+             :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
+             style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
+            <img src="{{ asset('images/slider/hero_gas.webp') }}"
+                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 640w, {{ asset('images/slider/hero_gas.webp') }} 1200w"
+                 sizes="100vw"
+                 alt="Profesionales Gas SEC Acreditados"
+                 fetchpriority="high"
+                 loading="eager"
+                 width="1200"
+                 height="669"
+                 class="w-full h-full object-cover">
+        </div>
 
         <!-- Slide 2: Agua & Sanitario Engineer -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0': currentSlide !== 1 }"
-             style="background-image: url('{{ asset('images/slider/hero_water.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 overflow-hidden"
+             :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0 scale-100': currentSlide !== 1 }"
+             style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
+            <img src="{{ asset('images/slider/hero_water.webp') }}"
+                 srcset="{{ asset('images/slider/hero_water_mobile.webp') }} 640w, {{ asset('images/slider/hero_water.webp') }} 1200w"
+                 sizes="100vw"
+                 alt="Ingeniería y Servicios Sanitarios"
+                 loading="lazy"
+                 width="1200"
+                 height="669"
+                 class="w-full h-full object-cover">
+        </div>
 
         <!-- Slide 3: Energías Renovables Specialist -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0': currentSlide !== 2 }"
-             style="background-image: url('{{ asset('images/slider/hero_solar.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 overflow-hidden"
+             :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0 scale-100': currentSlide !== 2 }"
+             style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
+            <img src="{{ asset('images/slider/hero_solar.webp') }}"
+                 srcset="{{ asset('images/slider/hero_solar_mobile.webp') }} 640w, {{ asset('images/slider/hero_solar.webp') }} 1200w"
+                 sizes="100vw"
+                 alt="Energías Renovables y Solar"
+                 loading="lazy"
+                 width="1200"
+                 height="669"
+                 class="w-full h-full object-cover">
+        </div>
 
         <!-- Subtle Gradient Mask Overlay for High Visibility + Legibility -->
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/40"></div>
