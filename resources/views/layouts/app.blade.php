@@ -51,9 +51,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
     </noscript>
 
-    <!-- Compiled Production CSS (Preloaded & Native) -->
-    <link rel="preload" as="style" href="{{ asset('css/app.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+    <!-- Inlined Production CSS (Zero Network Requests, 0ms Render-Blocking) -->
+    <style>
+        {!! file_get_contents(public_path('css/app.min.css')) !!}
+    </style>
 
     <!-- AlpineJS with Intersect Plugin (Self-Hosted Local, Fast & Long-Term Cached) -->
     <script defer src="{{ asset('js/alpine-intersect.min.js') }}"></script>
@@ -161,12 +162,12 @@
                 </div>
 
                 <!-- Modern Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
-                    <a href="{{ route('home') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('home') ? 'text-gae-blue bg-white shadow-xs' : 'text-slate-700 hover:text-gae-blue hover:bg-white' }} rounded-xl transition-all">Inicio</a>
-                    <a href="{{ route('pages.quienes_somos') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.quienes_somos') ? 'text-gae-blue bg-white shadow-xs' : 'text-slate-700 hover:text-gae-blue hover:bg-white' }} rounded-xl transition-all">Quiénes Somos</a>
-                    <a href="{{ route('pages.beneficios') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.beneficios') ? 'text-gae-blue bg-white shadow-xs' : 'text-slate-700 hover:text-gae-blue hover:bg-white' }} rounded-xl transition-all">Beneficios Socios</a>
-                    <a href="{{ route('home') }}#profesionales" class="px-3.5 py-2 text-xs font-bold text-slate-700 hover:text-gae-blue hover:bg-white rounded-xl transition-all">Socios SEC</a>
-                    <a href="{{ route('pages.unete') }}" class="px-4 py-2 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition-all flex items-center gap-1 border border-emerald-200/60">
+                <nav class="hidden md:flex items-center gap-1 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80">
+                    <a href="{{ route('home') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('home') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Inicio</a>
+                    <a href="{{ route('pages.quienes_somos') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.quienes_somos') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Quiénes Somos</a>
+                    <a href="{{ route('pages.beneficios') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.beneficios') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Beneficios Socios</a>
+                    <a href="{{ route('home') }}#profesionales" class="px-3.5 py-2 text-xs font-bold text-slate-800 hover:text-sky-800 hover:bg-white rounded-xl transition-all">Socios SEC</a>
+                    <a href="{{ route('pages.unete') }}" class="px-4 py-2 text-xs font-bold text-emerald-800 bg-emerald-100/70 hover:bg-emerald-100 rounded-xl transition-all flex items-center gap-1 border border-emerald-300">
                         <span>⚡ Únete al Gremio</span>
                     </a>
                 </nav>
@@ -337,43 +338,56 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts: Custom Cursor, Vertical Scroll Progress & Footer-Only Go To Top -->
+    <!-- Interactive Scripts: Non-Blocking & Optimized for Mobile/Desktop -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
             const cursorFollower = document.getElementById('cursor-follower');
             const cursorDot = document.getElementById('cursor-dot');
             const progressBarVertical = document.getElementById('scroll-progress-vertical');
             const backToTopBtn = document.getElementById('back-to-top-btn');
 
-            if (cursorFollower && cursorDot) {
+            if (hasFinePointer && cursorFollower && cursorDot) {
+                let mouseScheduled = false;
                 window.addEventListener('mousemove', (e) => {
-                    cursorFollower.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-                    cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-                });
-
-                document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursorFollower.classList.add('scale-150', 'border-sky-400'));
-                    el.addEventListener('mouseleave', () => cursorFollower.classList.remove('scale-150', 'border-sky-400'));
-                });
+                    if (!mouseScheduled) {
+                        requestAnimationFrame(() => {
+                            cursorFollower.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                            mouseScheduled = false;
+                        });
+                        mouseScheduled = true;
+                    }
+                }, { passive: true });
             }
 
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPos = window.scrollY;
+            if (progressBarVertical || backToTopBtn) {
+                let scrollScheduled = false;
+                window.addEventListener('scroll', () => {
+                    if (!scrollScheduled) {
+                        requestAnimationFrame(() => {
+                            const scrollPos = window.scrollY;
+                            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-                if (totalHeight > 0 && progressBarVertical) {
-                    const percentage = (scrollPos / totalHeight) * 100;
-                    progressBarVertical.style.height = percentage + '%';
-                }
+                            if (totalHeight > 0 && progressBarVertical) {
+                                progressBarVertical.style.height = (scrollPos / totalHeight * 100) + '%';
+                            }
 
-                if (scrollPos + window.innerHeight >= document.documentElement.scrollHeight - 350) {
-                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
-                } else {
-                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
-                }
-            });
+                            if (backToTopBtn) {
+                                if (scrollPos > 400) {
+                                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+                                } else {
+                                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                                }
+                            }
+                            scrollScheduled = false;
+                        });
+                        scrollScheduled = true;
+                    }
+                }, { passive: true });
+            }
         });
     </script>
 
