@@ -89,18 +89,18 @@
                     El <strong>29 de Septiembre de 2018</strong> se constituye y legaliza formalmente ante el Ministerio de Economía y el SII la <strong>Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G. (RUT 65.173.361-8)</strong>, consolidándose como un referente nacional de autorregulación ética, certificación permanente y respaldo técnico bajo los decretos <strong>DS 66</strong> y <strong>DS 222</strong> de la SEC.
                 </p>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <span class="text-2xl sm:text-3xl font-black text-emerald-600">2017</span>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-4 border-t border-slate-100">
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                        <span class="text-2xl xl:text-3xl font-black text-emerald-600 tracking-tight whitespace-nowrap">2017</span>
                         <p class="text-[11px] font-bold text-slate-600 mt-1">Origen de la Idea</p>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <span class="text-2xl sm:text-3xl font-black text-sky-600">2018</span>
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                        <span class="text-2xl xl:text-3xl font-black text-sky-600 tracking-tight whitespace-nowrap">2018</span>
                         <p class="text-[11px] font-bold text-slate-600 mt-1">Fundación & Legalización</p>
                     </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 col-span-2 sm:col-span-1">
-                        <span class="text-2xl sm:text-3xl font-black text-amber-600">65.173.361-8</span>
-                        <p class="text-[11px] font-bold text-slate-600 mt-1">RUT Oficial Gremio</p>
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 col-span-2 sm:col-span-1 flex flex-col justify-center min-w-0">
+                        <span class="text-base sm:text-[15px] md:text-base lg:text-lg xl:text-xl font-black text-amber-600 tracking-tight whitespace-nowrap block">65.173.361-8</span>
+                        <p class="text-[11px] font-bold text-slate-600 mt-1 whitespace-nowrap">RUT Oficial Gremio</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                         <div>
                             <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-extrabold uppercase">Presidente & Fundador</span>
                             <h3 class="text-xl font-black text-white mt-1">Domingo Isaín Plaza Caamaño</h3>
-                            <p class="text-xs text-slate-400 font-mono">RUT: 12.738.961-6 &bull; Licencia SEC Clase A</p>
+                            <p class="text-xs text-slate-400 font-mono whitespace-nowrap">RUT: 12.738.961-6 &bull; Licencia SEC Clase A</p>
                         </div>
                     </div>
 
@@ -122,22 +122,22 @@
                     </blockquote>
 
                     <!-- Official Legal Card -->
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] space-y-1.5 text-slate-300">
-                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
-                            <span class="text-slate-400 font-semibold">Razón Social:</span>
-                            <span class="font-bold text-white text-right">Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.</span>
+                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] space-y-2 text-slate-300">
+                        <div class="flex justify-between items-start border-b border-slate-800 pb-2 gap-3">
+                            <span class="text-slate-400 font-semibold shrink-0">Razón Social:</span>
+                            <span class="font-bold text-white text-right leading-tight">Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.</span>
                         </div>
-                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
                             <span class="text-slate-400 font-semibold">RUT Gremial:</span>
-                            <span class="font-mono font-bold text-emerald-400">65.173.361-8</span>
+                            <span class="font-mono font-bold text-emerald-400 text-xs bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-500/20 whitespace-nowrap">65.173.361-8</span>
                         </div>
-                        <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
                             <span class="text-slate-400 font-semibold">Constitución Legal:</span>
-                            <span class="font-bold text-slate-200">29 de Septiembre de 2018</span>
+                            <span class="font-bold text-slate-200 whitespace-nowrap">29 de Septiembre de 2018</span>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-slate-400 font-semibold">Casa Matriz:</span>
-                            <span class="font-bold text-slate-200">Providencia 1208 Of. 207, Providencia, Santiago</span>
+                        <div class="flex justify-between items-start pt-0.5 gap-3">
+                            <span class="text-slate-400 font-semibold shrink-0">Casa Matriz:</span>
+                            <span class="font-bold text-slate-200 text-right">Providencia 1208 Of. 207, Providencia, Santiago</span>
                         </div>
                     </div>
                 </div>
