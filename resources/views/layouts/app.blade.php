@@ -51,12 +51,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
     </noscript>
 
-    <!-- Compiled Production CSS (Zero JIT Overhead, 100% Native) -->
+    <!-- Compiled Production CSS (Preloaded & Native) -->
+    <link rel="preload" as="style" href="{{ asset('css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
 
-    <!-- AlpineJS with Intersect Plugin (Deferred) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- AlpineJS with Intersect Plugin (Self-Hosted Local, Fast & Long-Term Cached) -->
+    <script defer src="{{ asset('js/alpine-intersect.min.js') }}"></script>
+    <script defer src="{{ asset('js/alpine.min.js') }}"></script>
     
     <style>
         /* Universal Browser Scrollbar */

@@ -23,19 +23,19 @@
     
     <!-- Hero Background Image Slider Carousel (Vibrant, Clear & Human) -->
     <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
-        <!-- Slide 1: Gas SEC Technician (LCP) -->
-        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
+        <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint) -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-85 transition-opacity duration-1000 ease-in-out"
+             :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0': currentSlide !== 0 }"
              style="background-image: url('{{ asset('images/slider/hero_gas.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Slide 2: Agua & Sanitario Engineer -->
-        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0 scale-100': currentSlide !== 1 }"
+        <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
+             :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0': currentSlide !== 1 }"
              style="background-image: url('{{ asset('images/slider/hero_water.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Slide 3: Energías Renovables Specialist -->
-        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-             :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0 scale-100': currentSlide !== 2 }"
+        <div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
+             :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0': currentSlide !== 2 }"
              style="background-image: url('{{ asset('images/slider/hero_solar.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Subtle Gradient Mask Overlay for High Visibility + Legibility -->
