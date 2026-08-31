@@ -42,38 +42,21 @@
     <meta name="twitter:description" content="@yield('meta_description', $defaultMetaDesc)">
     <meta name="twitter:image" content="@yield('og_image', asset('images/GAEGAG.jpg'))">
 
-    <!-- Google Font: Inter -->
+    <!-- Google Font: Inter (Optimized Non-Blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    </noscript>
 
-    <!-- Tailwind CSS CDN & AlpineJS with Intersect Plugin -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Compiled Production CSS (Zero JIT Overhead, 100% Native) -->
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+
+    <!-- AlpineJS with Intersect Plugin (Deferred) -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        gae: {
-                            green: '#4da832',
-                            'green-dark': '#3d8727',
-                            blue: '#2a81ba',
-                            'blue-dark': '#1f6594',
-                            amber: '#f0a827',
-                            'amber-dark': '#c98818',
-                            dark: '#0f172a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     
     <style>
         /* Universal Browser Scrollbar */
@@ -294,15 +277,15 @@
                         <img src="{{ asset('images/GAEGAG.webp') }}" alt="GAE AG Logo" width="48" height="48" class="h-12 w-auto bg-white p-1 rounded-lg">
                         <span class="text-xl font-bold text-white tracking-wide">G.A.E. A.G.</span>
                     </div>
-                    <p class="text-slate-400 text-sm leading-relaxed max-w-md">
-                        <strong>Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG.</strong><br>
+                    <p class="text-slate-300 text-sm leading-relaxed max-w-md">
+                        <strong class="text-white font-bold">Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG.</strong><br>
                         Fundada en el año 2017 por Domingo Isaín Plaza Caamaño para la profesionalización continua de especialistas, instaladores técnicos e ingenieros en Chile.
                     </p>
-                    <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-400 pt-2">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-emerald-400 border border-slate-700">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Acreditación SEC
+                    <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-300 pt-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-emerald-300 border border-slate-700">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Acreditación SEC
                         </span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-sky-400 border border-slate-700">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-sky-300 border border-slate-700">
                             Fundación 2017
                         </span>
                     </div>
@@ -311,7 +294,7 @@
                 <!-- Navigation Links -->
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Navegación</h3>
-                    <ul class="space-y-2.5 text-sm">
+                    <ul class="space-y-2.5 text-sm text-slate-300">
                         <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="{{ route('pages.quienes_somos') }}" class="hover:text-white transition-colors">Quiénes Somos</a></li>
                         <li><a href="{{ route('pages.beneficios') }}" class="hover:text-white transition-colors">Beneficios de Colegiatura</a></li>
@@ -323,31 +306,31 @@
                 <!-- Contact & Support -->
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Contacto & Soporte</h3>
-                    <ul class="space-y-2.5 text-sm text-slate-400">
+                    <ul class="space-y-2.5 text-sm text-slate-300">
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.144 4.175 4.287-1.124zm11.383-6.183c-.309-.154-1.826-.901-2.109-1.004-.284-.103-.491-.154-.698.154-.207.309-.801 1.004-.982 1.211-.181.207-.362.232-.67.077-.309-.154-1.306-.481-2.488-1.535-.919-.82-1.54-1.833-1.721-2.142-.181-.309-.019-.476.135-.63.139-.138.309-.362.464-.542.155-.181.207-.309.31-.516.103-.207.052-.387-.026-.542-.078-.154-.698-1.681-.957-2.301-.252-.603-.509-.522-.698-.531-.18-.009-.387-.009-.595-.009-.207 0-.542.078-.826.387-.284.309-1.085 1.061-1.085 2.589 0 1.528 1.112 3.004 1.267 3.211.155.207 2.189 3.342 5.304 4.686.741.32 1.319.511 1.77.654.743.236 1.419.203 1.953.123.596-.089 1.826-.746 2.084-1.467.258-.721.258-1.339.181-1.467-.078-.128-.284-.206-.593-.361z"/></svg>
-                            <a href="https://wa.me/{{ $contactWhatsapp }}" target="_blank" class="hover:text-emerald-400 transition-colors">WhatsApp: {{ $contactPhone }}</a>
+                            <a href="https://wa.me/{{ $contactWhatsapp }}" target="_blank" class="hover:text-emerald-300 transition-colors">WhatsApp: {{ $contactPhone }}</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-gae-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <a href="tel:{{ $cleanPhone }}" class="hover:text-sky-400 transition-colors">Teléfono: {{ $contactPhone }}</a>
+                            <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <a href="tel:{{ $cleanPhone }}" class="hover:text-sky-300 transition-colors">Teléfono: {{ $contactPhone }}</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-gae-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <a href="mailto:{{ $contactEmail }}" class="hover:text-amber-400 transition-colors">{{ $contactEmail }}</a>
+                            <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:{{ $contactEmail }}" class="hover:text-amber-300 transition-colors">{{ $contactEmail }}</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-gae-green shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             <span>Providencia 1208 Of. 207, Providencia, Santiago</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-300 gap-4">
                 <p>&copy; {{ date('Y') }} Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G. (RUT 65.173.361-8). Todos los derechos reservados.</p>
                 <p class="flex items-center gap-1">
-                    <span>Presidente Fundador: <strong>Domingo Isaín Plaza Caamaño</strong></span>
+                    <span>Presidente Fundador: <strong class="text-white font-bold">Domingo Isaín Plaza Caamaño</strong></span>
                 </p>
             </div>
         </div>

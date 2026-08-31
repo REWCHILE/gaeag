@@ -57,6 +57,15 @@ class Member extends Model
                 return $this->photo_path;
             }
             $cleanPath = ltrim($this->photo_path, '/');
+            $webpName = pathinfo($cleanPath, PATHINFO_FILENAME) . '.webp';
+
+            // Check if WebP version exists first
+            if (file_exists(public_path('images/members/' . $webpName))) {
+                return asset('images/members/' . $webpName);
+            }
+            if (file_exists(public_path('images/' . $webpName))) {
+                return asset('images/' . $webpName);
+            }
             if (file_exists(public_path($cleanPath))) {
                 return asset($cleanPath);
             }
@@ -68,7 +77,7 @@ class Member extends Model
             }
             return asset('storage/' . $cleanPath);
         }
-        return 'https://ui-avatars.com/api/?name=' . urlencode($this->full_name) . '&background=2a81ba&color=ffffff&size=256';
+        return 'https://ui-avatars.com/api/?name=' . urlencode($this->full_name) . '&background=1a6494&color=ffffff&size=256';
     }
 
     public function getQrCodeUrlAttribute(): string

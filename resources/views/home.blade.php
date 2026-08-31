@@ -140,29 +140,29 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <div class="w-32 sm:w-36 h-32 sm:h-36 rounded-full ring-4 ring-gae-green/50 overflow-hidden shadow-xl bg-slate-800 flex items-center justify-center">
                             @if($president && $president->photo_path)
-                                <img src="{{ $president->photo_url }}" alt="{{ $president->full_name }}" class="w-full h-full object-cover">
+                                <img src="{{ $president->photo_url }}" alt="{{ $president->full_name }}" width="144" height="144" class="w-full h-full object-cover">
                             @else
                                 <span class="text-4xl font-extrabold text-white">DP</span>
                             @endif
                         </div>
 
                         <div>
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                                 Fundador & Presidente
                             </span>
                             <h3 class="text-2xl font-black text-white mt-2">{{ $president->full_name ?? 'Domingo Isaín Plaza Caamaño' }}</h3>
-                            <p class="text-xs font-medium text-slate-400">Presidente del gremio desde su creación en 2017 hasta la actualidad</p>
+                            <p class="text-xs font-medium text-slate-300">Presidente del gremio desde su creación en 2017 hasta la actualidad</p>
                         </div>
 
                         <div class="w-full pt-4 border-t border-slate-800/80 flex items-center justify-center gap-3 text-xs text-slate-300">
-                            <span class="flex items-center gap-1 font-semibold text-emerald-400">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="flex items-center gap-1 font-semibold text-emerald-300">
+                                <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                                 Acreditación SEC Verificada
                             </span>
                         </div>
 
                         @if($president)
-                            <a href="{{ route('members.public_show', $president->slug) }}" class="w-full py-3 rounded-xl bg-gae-blue hover:bg-gae-blue-dark text-white font-bold text-xs shadow-md transition-all min-h-[44px] flex items-center justify-center">
+                            <a href="{{ route('members.public_show', $president->slug) }}" class="w-full py-3 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-bold text-xs shadow-md transition-all min-h-[44px] flex items-center justify-center">
                                 Ver Ficha & QR SEC del Presidente
                             </a>
                         @endif
