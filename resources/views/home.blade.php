@@ -28,14 +28,14 @@
         <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-85 overflow-hidden"
              :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
-            <img src="{{ asset('images/slider/hero_gas.webp') }}"
-                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 540w, {{ asset('images/slider/hero_gas.webp') }} 1000w"
-                 sizes="100vw"
+            <img src="{{ asset('images/slider/hero_gas_mobile.webp') }}"
+                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 480w, {{ asset('images/slider/hero_gas.webp') }} 960w"
+                 sizes="(max-width: 640px) 100vw, 960px"
                  alt="Profesionales Gas SEC Acreditados"
                  fetchpriority="high"
                  loading="eager"
-                 width="1000"
-                 height="558"
+                 width="960"
+                 height="535"
                  class="w-full h-full object-cover">
         </div>
 
