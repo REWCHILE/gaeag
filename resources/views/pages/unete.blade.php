@@ -213,29 +213,29 @@
                             <form @submit.prevent="submitApplication" class="space-y-4 text-xs">
                                 
                                 <div>
-                                    <label class="block font-bold text-slate-300 mb-1">Nombre Completo (*):</label>
-                                    <input type="text" x-model="form.full_name" required placeholder="Ej: Domingo Isaín Plaza Caamaño"
+                                    <label for="apply-full-name" class="block font-bold text-slate-300 mb-1">Nombre Completo (*):</label>
+                                    <input type="text" id="apply-full-name" x-model="form.full_name" required placeholder="Ej: Domingo Isaín Plaza Caamaño"
                                            class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">RUT (*):</label>
-                                        <input type="text" x-model="form.rut" required placeholder="Ej: 12.345.678-9"
+                                        <label for="apply-rut" class="block font-bold text-slate-300 mb-1">RUT (*):</label>
+                                        <input type="text" id="apply-rut" x-model="form.rut" required placeholder="Ej: 12.345.678-9"
                                                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                     </div>
 
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">N° Licencia SEC (Opcional):</label>
-                                        <input type="text" x-model="form.sec_licence" placeholder="Ej: SEC-GAS-0017"
+                                        <label for="apply-sec-licence" class="block font-bold text-slate-300 mb-1">N° Licencia SEC (Opcional):</label>
+                                        <input type="text" id="apply-sec-licence" x-model="form.sec_licence" placeholder="Ej: SEC-GAS-0017"
                                                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Especialidad Principal (*):</label>
-                                        <select x-model="form.category" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                                        <label for="apply-category" class="block font-bold text-slate-300 mb-1">Especialidad Principal (*):</label>
+                                        <select id="apply-category" aria-label="Especialidad Principal" x-model="form.category" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                             <option value="Gas">Gas & Redes de Combustibles</option>
                                             <option value="Agua">Agua Potable & Alcantarillado</option>
                                             <option value="Energía">Energía Eléctrica & Solar</option>
@@ -245,8 +245,8 @@
                                     </div>
 
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Categoría / Clase SEC:</label>
-                                        <select x-model="form.class" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                                        <label for="apply-class" class="block font-bold text-slate-300 mb-1">Categoría / Clase SEC:</label>
+                                        <select id="apply-class" aria-label="Categoría o Clase SEC" x-model="form.class" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                             <option value="Clase A SEC">Clase A SEC (Ingeniero / Máxima Potencia)</option>
                                             <option value="Clase B SEC">Clase B SEC (Media y Alta Presión)</option>
                                             <option value="Clase C SEC">Clase C SEC (Instalaciones Domiciliarias)</option>
@@ -258,22 +258,22 @@
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Teléfono / WhatsApp (*):</label>
-                                        <input type="text" x-model="form.phone" required placeholder="Ej: +56 9 1234 5678"
+                                        <label for="apply-phone" class="block font-bold text-slate-300 mb-1">Teléfono / WhatsApp (*):</label>
+                                        <input type="text" id="apply-phone" x-model="form.phone" required placeholder="Ej: +56 9 1234 5678"
                                                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                     </div>
 
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Correo Electrónico (*):</label>
-                                        <input type="email" x-model="form.email" required placeholder="tuemail@ejemplo.cl"
+                                        <label for="apply-email" class="block font-bold text-slate-300 mb-1">Correo Electrónico (*):</label>
+                                        <input type="email" id="apply-email" x-model="form.email" required placeholder="tuemail@ejemplo.cl"
                                                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Región (*):</label>
-                                        <select x-model="form.region" @change="onRegionChange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                                        <label for="apply-region" class="block font-bold text-slate-300 mb-1">Región (*):</label>
+                                        <select id="apply-region" aria-label="Región de Chile" x-model="form.region" @change="onRegionChange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                             <template x-for="(comunas, regName) in chileData" :key="regName">
                                                 <option :value="regName" x-text="regName" :selected="regName === form.region"></option>
                                             </template>
@@ -281,8 +281,8 @@
                                     </div>
 
                                     <div>
-                                        <label class="block font-bold text-slate-300 mb-1">Comuna / Ciudad (*):</label>
-                                        <select x-model="form.city" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                                        <label for="apply-city" class="block font-bold text-slate-300 mb-1">Comuna / Ciudad (*):</label>
+                                        <select id="apply-city" aria-label="Comuna o Ciudad" x-model="form.city" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                                             <template x-for="comuna in (chileData[form.region] || [])" :key="comuna">
                                                 <option :value="comuna" x-text="comuna" :selected="comuna === form.city"></option>
                                             </template>
@@ -291,8 +291,8 @@
                                 </div>
 
                                 <div>
-                                    <label class="block font-bold text-slate-300 mb-1">Reseña o Experiencia Profesional (Opcional):</label>
-                                    <textarea x-model="form.bio" rows="2" placeholder="Años de experiencia, proyectos destacados o certificaciones adicionales..."
+                                    <label for="apply-bio" class="block font-bold text-slate-300 mb-1">Reseña o Experiencia Profesional (Opcional):</label>
+                                    <textarea id="apply-bio" x-model="form.bio" rows="2" placeholder="Años de experiencia, proyectos destacados o certificaciones adicionales..."
                                               class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green"></textarea>
                                 </div>
 

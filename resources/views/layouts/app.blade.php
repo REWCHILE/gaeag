@@ -165,7 +165,7 @@
 
                     <!-- Logo & Brand -->
                     <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                        <img src="{{ asset('images/GAEGAG.jpg') }}" alt="GAE AG Logo" class="h-10 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105">
+                        <img src="{{ asset('images/GAEGAG.webp') }}" alt="GAE AG Logo" width="56" height="56" class="h-10 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105">
                         <div class="flex flex-col">
                             <span class="font-extrabold text-base sm:text-xl leading-tight text-slate-900 tracking-tight flex items-center gap-1.5">
                                 G.A.E. A.G.
@@ -229,13 +229,13 @@
                     <!-- Drawer Header & Close Button -->
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('images/GAEGAG.jpg') }}" alt="GAE AG" class="h-10 w-auto">
+                            <img src="{{ asset('images/GAEGAG.webp') }}" alt="GAE AG" width="40" height="40" class="h-10 w-auto">
                             <div>
                                 <span class="font-black text-slate-900 text-sm block">G.A.E. A.G.</span>
                                 <span class="text-[10px] text-slate-500 font-semibold uppercase">Menú Principal</span>
                             </div>
                         </div>
-                        <button @click="mobileNavOpen = false" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 min-h-[44px] min-w-[44px] flex items-center justify-center">
+                        <button @click="mobileNavOpen = false" aria-label="Cerrar Menú Principal" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 min-h-[44px] min-w-[44px] flex items-center justify-center">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>
                     </div>
@@ -291,7 +291,7 @@
                 <!-- Brand Info -->
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('images/GAEGAG.jpg') }}" alt="GAE AG Logo" class="h-12 w-auto bg-white p-1 rounded-lg">
+                        <img src="{{ asset('images/GAEGAG.webp') }}" alt="GAE AG Logo" width="48" height="48" class="h-12 w-auto bg-white p-1 rounded-lg">
                         <span class="text-xl font-bold text-white tracking-wide">G.A.E. A.G.</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed max-w-md">

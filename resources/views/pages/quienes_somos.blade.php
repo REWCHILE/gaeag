@@ -109,7 +109,7 @@
             <div class="lg:col-span-6 space-y-4">
                 <div class="p-8 rounded-3xl bg-slate-950 text-white shadow-2xl border border-slate-800 relative overflow-hidden space-y-6">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('images/members/domingo-isain.png') }}" alt="Domingo Isaín Plaza Caamaño" class="w-20 h-20 rounded-2xl object-cover border-2 border-emerald-400/50 shadow-md">
+                        <img src="{{ asset('images/members/domingo-isain.webp') }}" alt="Domingo Isaín Plaza Caamaño" width="80" height="80" class="w-20 h-20 rounded-2xl object-cover border-2 border-emerald-400/50 shadow-md">
                         <div>
                             <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-extrabold uppercase">Presidente & Fundador</span>
                             <h3 class="text-xl font-black text-white mt-1">Domingo Isaín Plaza Caamaño</h3>

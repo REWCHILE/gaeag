@@ -4,6 +4,9 @@
 @section('meta_description', 'Sitio oficial de GAE AG, la Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.')
 
 @push('head')
+    <!-- Preload Hero LCP Image -->
+    <link rel="preload" as="image" href="{{ asset('images/slider/hero_gas.webp') }}" type="image/webp" fetchpriority="high">
+
     <!-- Inject JSON-LD Schema -->
     <script type="application/ld+json">
         {!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
@@ -20,20 +23,20 @@
     
     <!-- Hero Background Image Slider Carousel (Vibrant, Clear & Human) -->
     <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
-        <!-- Slide 1: Gas SEC Technician -->
+        <!-- Slide 1: Gas SEC Technician (LCP) -->
         <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
              :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
-             style="background-image: url('{{ asset('images/slider/hero_gas.jpg') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+             style="background-image: url('{{ asset('images/slider/hero_gas.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Slide 2: Agua & Sanitario Engineer -->
         <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
              :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0 scale-100': currentSlide !== 1 }"
-             style="background-image: url('{{ asset('images/slider/hero_water.jpg') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+             style="background-image: url('{{ asset('images/slider/hero_water.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Slide 3: Energías Renovables Specialist -->
         <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
              :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0 scale-100': currentSlide !== 2 }"
-             style="background-image: url('{{ asset('images/slider/hero_solar.jpg') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
+             style="background-image: url('{{ asset('images/slider/hero_solar.webp') }}'); transition: opacity 1.5s ease-in-out, transform 8s ease-out;"></div>
 
         <!-- Subtle Gradient Mask Overlay for High Visibility + Legibility -->
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/40"></div>
@@ -104,7 +107,7 @@
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-md p-6 rounded-3xl bg-slate-900/95 border border-slate-800 shadow-2xl backdrop-blur-xl">
                     <div class="flex justify-center mb-6">
-                        <img src="{{ asset('images/GAEGAG.jpg') }}" alt="Emblema GAE AG" class="h-28 sm:h-32 w-auto object-contain bg-white p-3 rounded-2xl shadow-md">
+                        <img src="{{ asset('images/GAEGAG.webp') }}" alt="Emblema GAE AG" width="128" height="128" class="h-28 sm:h-32 w-auto object-contain bg-white p-3 rounded-2xl shadow-md">
                     </div>
                     
                     <div class="text-center space-y-2 border-t border-slate-800 pt-4">
@@ -217,7 +220,7 @@
             <!-- Gas SEC -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-emerald-50 border border-emerald-100 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/icon_gas.jpg') }}" alt="Profesionales del Gas SEC" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/icons/icon_gas.webp') }}" alt="Profesionales del Gas SEC" width="64" height="64" loading="lazy" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Profesionales del Gas SEC</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
@@ -228,7 +231,7 @@
             <!-- Agua & Sanitario -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-sky-50 border border-sky-100 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/icon_water.jpg') }}" alt="Especialistas en Agua" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/icons/icon_water.webp') }}" alt="Especialistas en Agua" width="64" height="64" loading="lazy" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Especialistas en Agua</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
@@ -239,7 +242,7 @@
             <!-- Energías Renovables -->
             <article class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform bg-amber-50 border border-amber-100 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/icon_energy.jpg') }}" alt="Energías Renovables" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/icons/icon_energy.webp') }}" alt="Energías Renovables" width="64" height="64" loading="lazy" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-bold text-slate-900">Energías Renovables</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
@@ -271,15 +274,21 @@
 
             <!-- Filters & Search -->
             <div class="flex flex-col sm:flex-row gap-3">
-                <input type="text" x-model="search" placeholder="Buscar por nombre, ciudad o licencia..." 
-                    class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue w-full sm:w-64 min-h-[44px]">
+                <div>
+                    <label for="member-search-input" class="sr-only">Buscar instalador por nombre, ciudad o licencia</label>
+                    <input type="text" id="member-search-input" aria-label="Buscar instalador por nombre, ciudad o licencia SEC" x-model="search" placeholder="Buscar por nombre, ciudad o licencia..." 
+                        class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue w-full sm:w-64 min-h-[44px]">
+                </div>
                 
-                <select x-model="category" class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue bg-white min-h-[44px]">
-                    <option value="all">Todas las especialidades</option>
-                    <option value="Gas">Gas</option>
-                    <option value="Agua">Agua</option>
-                    <option value="Energía">Energía</option>
-                </select>
+                <div>
+                    <label for="category-filter" class="sr-only">Filtrar por especialidad</label>
+                    <select id="category-filter" aria-label="Filtrar instaladores por especialidad" x-model="category" class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-gae-blue bg-white min-h-[44px] w-full">
+                        <option value="all">Todas las especialidades</option>
+                        <option value="Gas">Gas</option>
+                        <option value="Agua">Agua</option>
+                        <option value="Energía">Energía</option>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -293,7 +302,7 @@
                         <!-- Header & Badge -->
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
-                                <img src="{{ $member->photo_url }}" alt="{{ $member->full_name }}" class="w-14 h-14 rounded-2xl object-cover ring-2 ring-slate-200">
+                                <img src="{{ $member->photo_url }}" alt="Foto de {{ $member->full_name }}" width="56" height="56" loading="lazy" class="w-14 h-14 rounded-2xl object-cover ring-2 ring-slate-200">
                                 <div>
                                     <h3 class="font-bold text-slate-900 text-base leading-tight">{{ $member->full_name }}</h3>
                                     <p class="text-xs text-slate-500 font-medium">{{ $member->city }}, {{ $member->region }}</p>
@@ -307,18 +316,18 @@
                         </div>
 
                         <!-- Info details -->
-                        <div class="mt-4 pt-4 border-t border-slate-200 space-y-2 text-xs text-slate-600">
+                        <div class="mt-4 pt-4 border-t border-slate-200 space-y-2 text-xs text-slate-700">
                             <div class="flex justify-between">
-                                <span class="font-semibold text-slate-500">Licencia SEC:</span>
+                                <span class="font-semibold text-slate-600">Licencia SEC:</span>
                                 <span class="font-bold text-slate-900">{{ $member->sec_licence ?: 'Acreditado SEC' }}</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="font-semibold text-slate-500">Clase:</span>
-                                <span class="font-bold text-gae-blue">{{ $member->class }}</span>
+                                <span class="font-semibold text-slate-600">Clase:</span>
+                                <span class="font-bold text-sky-900">{{ $member->class }}</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="font-semibold text-slate-500">Especialidad:</span>
-                                <span class="font-bold text-gae-green">{{ $member->category }}</span>
+                                <span class="font-semibold text-slate-600">Especialidad:</span>
+                                <span class="font-bold text-emerald-900">{{ $member->category }}</span>
                             </div>
                         </div>
 
@@ -329,7 +338,7 @@
 
                     <!-- Actions & WhatsApp Contact -->
                     <div class="pt-4 border-t border-slate-200 flex items-center justify-between gap-2">
-                        <a href="{{ route('members.public_show', $member->slug) }}" class="flex-grow text-center py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1.5">
+                        <a href="{{ route('members.public_show', $member->slug) }}" aria-label="Ver credencial y perfil de {{ $member->full_name }}" class="flex-grow text-center py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1.5">
                             <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Ver Credencial
                         </a>
@@ -515,20 +524,20 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Nombre Completo *</label>
-                        <input type="text" x-model="form.full_name" required placeholder="Ej: Juan Pérez Morales" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-full-name" class="block font-bold text-slate-300 mb-1">Nombre Completo *</label>
+                        <input type="text" id="modal-full-name" x-model="form.full_name" required placeholder="Ej: Juan Pérez Morales" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">RUT *</label>
-                        <input type="text" x-model="form.rut" required placeholder="Ej: 12.345.678-9" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-rut" class="block font-bold text-slate-300 mb-1">RUT *</label>
+                        <input type="text" id="modal-rut" x-model="form.rut" required placeholder="Ej: 12.345.678-9" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Especialidad Principal *</label>
-                        <select x-model="form.category" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-category" class="block font-bold text-slate-300 mb-1">Especialidad Principal *</label>
+                        <select id="modal-category" aria-label="Especialidad Principal" x-model="form.category" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                             <option value="Gas">Gas SEC</option>
                             <option value="Agua">Agua & Sanitaria</option>
                             <option value="Energía">Energía Solar</option>
@@ -537,33 +546,33 @@
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Licencia SEC</label>
-                        <input type="text" x-model="form.sec_licence" placeholder="Ej: SEC-GAS-99120" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-sec-licence" class="block font-bold text-slate-300 mb-1">Licencia SEC</label>
+                        <input type="text" id="modal-sec-licence" x-model="form.sec_licence" placeholder="Ej: SEC-GAS-99120" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Clase / Certificación</label>
-                        <input type="text" x-model="form.class" placeholder="Ej: Clase A SEC / Sanitaria" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-class" class="block font-bold text-slate-300 mb-1">Clase / Certificación</label>
+                        <input type="text" id="modal-class" x-model="form.class" placeholder="Ej: Clase A SEC / Sanitaria" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Teléfono / WhatsApp *</label>
-                        <input type="text" x-model="form.phone" required placeholder="Ej: +56 9 1234 5678" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-phone" class="block font-bold text-slate-300 mb-1">Teléfono / WhatsApp *</label>
+                        <input type="text" id="modal-phone" x-model="form.phone" required placeholder="Ej: +56 9 1234 5678" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Email *</label>
-                        <input type="email" x-model="form.email" required placeholder="ejemplo@correo.cl" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-email" class="block font-bold text-slate-300 mb-1">Email *</label>
+                        <input type="email" id="modal-email" x-model="form.email" required placeholder="ejemplo@correo.cl" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                     </div>
                 </div>
 
                 <!-- Dynamic Cascading Region & Commune Selectors (Chile) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Región de Chile *</label>
-                        <select x-model="form.region" @change="onRegionChange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-region" class="block font-bold text-slate-300 mb-1">Región de Chile *</label>
+                        <select id="modal-region" aria-label="Región de Chile" x-model="form.region" @change="onRegionChange()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                             <template x-for="(comunas, reg) in chileData" :key="reg">
                                 <option :value="reg" x-text="reg" :selected="reg === form.region"></option>
                             </template>
@@ -571,8 +580,8 @@
                     </div>
 
                     <div>
-                        <label class="block font-bold text-slate-300 mb-1">Ciudad / Comuna *</label>
-                        <select x-model="form.city" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
+                        <label for="modal-city" class="block font-bold text-slate-300 mb-1">Ciudad / Comuna *</label>
+                        <select id="modal-city" aria-label="Ciudad o Comuna" x-model="form.city" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green">
                             <template x-for="comuna in (chileData[form.region] || [])" :key="comuna">
                                 <option :value="comuna" x-text="comuna" :selected="comuna === form.city"></option>
                             </template>
@@ -581,8 +590,8 @@
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-300 mb-1">Resumen de Experiencia Técnica</label>
-                    <textarea x-model="form.bio" rows="3" placeholder="Describe brevemente tus años de experiencia en proyectos de gas, agua o energía..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green"></textarea>
+                    <label for="modal-bio" class="block font-bold text-slate-300 mb-1">Resumen de Experiencia Técnica</label>
+                    <textarea id="modal-bio" x-model="form.bio" rows="3" placeholder="Describe brevemente tus años de experiencia en proyectos de gas, agua o energía..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-gae-green"></textarea>
                 </div>
 
                 <div class="pt-4 flex items-center justify-end gap-3 border-t border-slate-800">
