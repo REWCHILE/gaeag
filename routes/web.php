@@ -28,6 +28,8 @@ Route::get('/beneficios-socios', [PageController::class, 'beneficios'])->name('p
 Route::get('/unete-al-gremio', [PageController::class, 'unete'])->name('pages.unete');
 Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [PageController::class, 'robots'])->name('robots');
+Route::get('/llms.txt', [PageController::class, 'llmsTxt'])->name('llms.txt');
+Route::get('/llms-full.txt', [PageController::class, 'llmsFullTxt'])->name('llms.full_txt');
 
 // Public Member Profiles & Applications
 Route::get('/profesionales/{slug}', [MemberPublicController::class, 'show'])->name('members.public_show');

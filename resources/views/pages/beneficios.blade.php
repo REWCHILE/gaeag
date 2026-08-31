@@ -3,6 +3,29 @@
 @section('title', 'Beneficios de Pertenecer a GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía')
 @section('meta_description', 'Descubre los 10 beneficios exclusivos de colegiarte en GAE AG: respaldo gremial, derivación de clientes, perfil digital con QR SEC, asesoría técnica y convenios comerciales.')
 
+@push('head')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "{{ route('home') }}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Beneficios Socios",
+                "item": "{{ route('pages.beneficios') }}"
+            }
+        ]
+    }
+    </script>
+@endpush
+
 @section('content')
 
 <!-- Hero Section -->

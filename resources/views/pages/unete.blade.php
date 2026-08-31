@@ -3,6 +3,29 @@
 @section('title', 'Únete al Gremio - Postulación e Incorporación a GAE AG | Instaladores SEC')
 @section('meta_description', 'Postula como socio a la Asociación Gremial de Profesionales del Gas, Agua y Energía GAE AG. Convocatoria abierta para instaladores autorizados SEC en todo Chile.')
 
+@push('head')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "{{ route('home') }}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Únete al Gremio",
+                "item": "{{ route('pages.unete') }}"
+            }
+        ]
+    }
+    </script>
+@endpush
+
 @section('content')
 
 <!-- Recruitment Landing Hero & Form Section -->

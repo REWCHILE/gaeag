@@ -24,6 +24,7 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Asociación Gremial GAE AG - Domingo Isaín Plaza Caamaño">
     <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="google-site-verification" content="{{ \App\Models\Setting::getByKey('google_site_verification', 'pw5h_bBoN_0bSPsItRqmQfjuETCwl0Jh2C0plG0xdSw') }}">
     <meta name="theme-color" content="#0f172a">
 
     <!-- Open Graph / Facebook / WhatsApp -->

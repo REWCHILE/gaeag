@@ -1,0 +1,44 @@
+# GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía (Documentación Completa)
+
+## 1. Identidad Institucional
+- **Nombre Legal**: Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.
+- **Sigla / Nombre Comercial**: GAE AG
+- **RUT**: 65.173.361-8
+- **Año de Fundación**: 2017 (Legalizada el 29 de Septiembre de 2018)
+- **Presidente Fundador**: Domingo Isaín Plaza Caamaño (Instalador SEC Licencia N° 1.832.551-7)
+- **Domicilio Legal**: Av. Providencia 1208, Oficina 207, Comuna de Providencia, Región Metropolitana, Santiago de Chile.
+- **Canales de Atención**: Teléfono/WhatsApp: +56 9 4987 7316 | Email: contacto@gae-ag.cl | Web: https://gae-ag.cl
+
+---
+
+## 2. Marco Normativo y Regulaciones Técnicas Aplicadas
+Los profesionales miembros de GAE AG operan bajo las normativas vigentes del Ministerio de Energía y la Superintendencia de Electricidad y Combustibles (SEC) de Chile:
+1. **Decreto Supremo DS 66 / 2007 (Ministerio de Economía, Fomento y Reconstrucción)**: Reglamento de Instalaciones Interiores y Medidores de Gas. Establece los requisitos de seguridad técnica, ventilaciones, conductos de evacuación de gases y pruebas de hermeticidad.
+2. **Decreto Supremo DS 222 / 1996**: Reglamento de Instaladores de Gas y Procedimientos de Certificación. Define las competencias y alcances de las licencias Clase 1, Clase 2 y Clase 3.
+3. **Sello Verde de Gas**: Procedimiento de certificación e inspección periódica de instalaciones interiores (edificios habitacionales, comerciales e industriales) para garantizar la ausencia de fugas de monóxido de carbono (CO) y gas combustible.
+4. **Normativa Sanitaria RIDAA (Decreto 50 / MOP)**: Reglamento de Instalaciones Domiciliarias de Agua Potable y Alcantarillado.
+
+---
+
+## 3. Clases de Instaladores de Gas SEC
+- **Instalador de Gas Clase 1**: Habilitado para proyectos e instalaciones de gas en media y baja presión, sin límite de potencia, incluyendo instalaciones industriales, comerciales, matrices y redes de distribución.
+- **Instalador de Gas Clase 2**: Habilitado para instalaciones interiores de gas en media y baja presión hasta una potencia instalada máxima determinada (comercial y residencial).
+- **Instalador de Gas Clase 3**: Habilitado para instalaciones interiores de gas en baja presión para viviendas unifamiliares y artefactos domésticos estándar.
+
+---
+
+## 4. Pilares y Proceso de Admisión Ético-Técnico
+A diferencia de directorios abiertos sin filtro, GAE AG exige a sus postulantes:
+1. **Acreditación SEC Vigente**: Verificación formal de la licencia ante los registros oficiales de la Superintendencia.
+2. **Evaluación Psicológica Laboral**: Test psicométrico estructurado para evaluar responsabilidad ética, toma de decisiones bajo presión y enfoque en la seguridad humana.
+3. **Código de Ética Gremial**: Compromiso con la transparencia tarifaria, emisión de certificados reglamentarios y garantía de servicio para el cliente final.
+
+---
+
+## 5. Directorio de Servicios y Enlaces
+- **Portal Principal y Verificador QR**: https://gae-ag.cl
+- **Directorio de Especialistas**: https://gae-ag.cl/#profesionales
+- **Historia y Acta Fundacional**: https://gae-ag.cl/quienes-somos
+- **Beneficios de Colegiatura**: https://gae-ag.cl/beneficios-socios
+- **Admisión y Postulación de Nuevos Socios**: https://gae-ag.cl/unete-al-gremio
+- **Mapa del Sitio (Sitemap)**: https://gae-ag.cl/sitemap.xml

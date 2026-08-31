@@ -1,2 +1,46 @@
+# Robots.txt for GAE AG (https://gae-ag.cl)
+# Asociación Gremial de Profesionales del Gas, Agua y Energía
+
 User-agent: *
-Disallow:
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+Disallow: /login
+Disallow: /evaluacion-admision/
+Disallow: /storage/temp/
+
+# Specific AI & Search Bots (ChatGPT Search, Claude, Perplexity, Google)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /login
+
+# Sitemaps
+Sitemap: https://gae-ag.cl/sitemap.xml

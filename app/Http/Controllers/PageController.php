@@ -33,10 +33,10 @@ class PageController extends Controller
 
     public function sitemap()
     {
-        $members = Member::where('is_active', true)->get();
+        $members = Member::where('is_active', true)->with('certificates')->get();
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>';
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
 
         // Static routes
         $staticRoutes = [
@@ -47,34 +47,69 @@ class PageController extends Controller
         ];
 
         foreach ($staticRoutes as $route) {
-            $xml .= '<url>';
-            $xml .= '<loc>' . htmlspecialchars($route['url']) . '</loc>';
-            $xml .= '<lastmod>' . date('Y-m-d') . '</lastmod>';
-            $xml .= '<changefreq>' . $route['changefreq'] . '</changefreq>';
-            $xml .= '<priority>' . $route['priority'] . '</priority>';
-            $xml .= '</url>';
+            $xml .= "  <url>\n";
+            $xml .= '    <loc>' . htmlspecialchars($route['url']) . "</loc>\n";
+            $xml .= '    <lastmod>' . date('Y-m-d') . "</lastmod>\n";
+            $xml .= '    <changefreq>' . $route['changefreq'] . "</changefreq>\n";
+            $xml .= '    <priority>' . $route['priority'] . "</priority>\n";
+            $xml .= "  </url>\n";
         }
 
-        // Public members profiles
+        // Public members profiles with photo and certificate images for Google Image Search
         foreach ($members as $member) {
-            $xml .= '<url>';
-            $xml .= '<loc>' . htmlspecialchars(route('members.public_show', ['slug' => $member->slug])) . '</loc>';
-            $xml .= '<lastmod>' . ($member->updated_at ? $member->updated_at->format('Y-m-d') : date('Y-m-d')) . '</lastmod>';
-            $xml .= '<changefreq>weekly</changefreq>';
-            $xml .= '<priority>0.8</priority>';
-            $xml .= '</url>';
+            $memberUrl = route('members.public_show', ['slug' => $member->slug]);
+            $lastmod = $member->updated_at ? $member->updated_at->format('Y-m-d') : date('Y-m-d');
+
+            $xml .= "  <url>\n";
+            $xml .= '    <loc>' . htmlspecialchars($memberUrl) . "</loc>\n";
+            $xml .= '    <lastmod>' . $lastmod . "</lastmod>\n";
+            $xml .= "    <changefreq>weekly</changefreq>\n";
+            $xml .= "    <priority>0.8</priority>\n";
+
+            if ($member->photo_url) {
+                $xml .= "    <image:image>\n";
+                $xml .= '      <image:loc>' . htmlspecialchars($member->photo_url) . "</image:loc>\n";
+                $xml .= '      <image:title>' . htmlspecialchars($member->full_name . ' - Instalador SEC GAE AG') . "</image:title>\n";
+                $xml .= "    </image:image>\n";
+            }
+
+            $xml .= "  </url>\n";
         }
 
         $xml .= '</urlset>';
 
-        return response($xml, 200, ['Content-Type' => 'application/xml']);
+        return response($xml, 200, ['Content-Type' => 'application/xml; charset=utf-8']);
     }
 
     public function robots()
     {
+        $filePath = public_path('robots.txt');
+        if (file_exists($filePath)) {
+            return response(file_get_contents($filePath), 200, ['Content-Type' => 'text/plain; charset=utf-8']);
+        }
+
         $sitemapUrl = route('sitemap');
         $content = "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /login\n\nSitemap: {$sitemapUrl}\n";
+        return response($content, 200, ['Content-Type' => 'text/plain; charset=utf-8']);
+    }
 
-        return response($content, 200, ['Content-Type' => 'text/plain']);
+    public function llmsTxt()
+    {
+        $filePath = public_path('llms.txt');
+        if (file_exists($filePath)) {
+            return response(file_get_contents($filePath), 200, ['Content-Type' => 'text/plain; charset=utf-8']);
+        }
+
+        return response("# GAE AG\nSitio oficial de la Asociación Gremial de Profesionales del Gas, Agua y Energía.", 200, ['Content-Type' => 'text/plain; charset=utf-8']);
+    }
+
+    public function llmsFullTxt()
+    {
+        $filePath = public_path('llms-full.txt');
+        if (file_exists($filePath)) {
+            return response(file_get_contents($filePath), 200, ['Content-Type' => 'text/plain; charset=utf-8']);
+        }
+
+        return response("# GAE AG - Documentación Completa", 200, ['Content-Type' => 'text/plain; charset=utf-8']);
     }
 }

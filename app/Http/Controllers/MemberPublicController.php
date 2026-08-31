@@ -23,41 +23,72 @@ class MemberPublicController extends Controller
             $member->update(['qr_code_path' => $qrPath]);
         }
 
-        // ProfilePage / Person Schema for SEO
+        // ProfilePage / Person / Breadcrumbs Schema for SEO
         $profileSchema = [
             '@context' => 'https://schema.org',
-            '@type' => 'ProfilePage',
-            'mainEntity' => [
-                '@type' => 'Person',
-                'name' => $member->full_name,
-                'jobTitle' => $member->title ?: "Especialista en {$member->category}",
-                'description' => $member->bio,
-                'image' => $member->photo_url,
-                'telephone' => $member->phone,
-                'email' => $member->email,
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'addressLocality' => $member->city,
-                    'addressRegion' => $member->region,
-                    'addressCountry' => 'CL'
-                ],
-                'worksFor' => [
-                    '@type' => 'Organization',
-                    'name' => 'Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG',
-                    'url' => url('/')
-                ],
-                'hasCredential' => $member->certificates->map(function ($cert) {
-                    return [
-                        '@type' => 'EducationalOccupationalCredential',
-                        'credentialCategory' => 'Certificado SEC',
-                        'name' => $cert->title,
-                        'recognizedBy' => [
-                            '@type' => 'Organization',
-                            'name' => $cert->issuing_entity
+            '@graph' => [
+                [
+                    '@type' => 'ProfilePage',
+                    '@id' => $member->public_url,
+                    'url' => $member->public_url,
+                    'name' => "{$member->full_name} - Instalador Acreditado GAE AG",
+                    'mainEntity' => [
+                        '@type' => 'Person',
+                        '@id' => "{$member->public_url}#person",
+                        'name' => $member->full_name,
+                        'jobTitle' => $member->title ?: "Especialista en {$member->category}",
+                        'description' => $member->bio,
+                        'image' => $member->photo_url,
+                        'telephone' => $member->phone,
+                        'email' => $member->email,
+                        'address' => [
+                            '@type' => 'PostalAddress',
+                            'addressLocality' => $member->city,
+                            'addressRegion' => $member->region,
+                            'addressCountry' => 'CL'
                         ],
-                        'identifier' => $cert->certificate_number
-                    ];
-                })->toArray()
+                        'worksFor' => [
+                            '@type' => 'Organization',
+                            'name' => 'Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG',
+                            'url' => url('/')
+                        ],
+                        'hasCredential' => $member->certificates->map(function ($cert) {
+                            return [
+                                '@type' => 'EducationalOccupationalCredential',
+                                'credentialCategory' => 'Certificado SEC',
+                                'name' => $cert->title,
+                                'recognizedBy' => [
+                                    '@type' => 'Organization',
+                                    'name' => $cert->issuing_entity
+                                ],
+                                'identifier' => $cert->certificate_number
+                            ];
+                        })->toArray()
+                    ]
+                ],
+                [
+                    '@type' => 'BreadcrumbList',
+                    'itemListElement' => [
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 1,
+                            'name' => 'Inicio',
+                            'item' => route('home')
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 2,
+                            'name' => 'Directorio de Socios',
+                            'item' => route('home') . '#profesionales'
+                        ],
+                        [
+                            '@type' => 'ListItem',
+                            'position' => 3,
+                            'name' => $member->full_name,
+                            'item' => $member->public_url
+                        ]
+                    ]
+                ]
             ]
         ];
 

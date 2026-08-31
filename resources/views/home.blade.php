@@ -327,16 +327,29 @@
                         </p>
                     </div>
 
-                    <!-- Actions & QR link -->
-                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between gap-3">
-                        <a href="{{ route('members.public_show', $member->slug) }}" class="flex-grow text-center py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center">
-                            Ver Información
+                    <!-- Actions & WhatsApp Contact -->
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between gap-2">
+                        <a href="{{ route('members.public_show', $member->slug) }}" class="flex-grow text-center py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1.5">
+                            <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Ver Credencial
+                        </a>
+
+                        @php
+                            $memberPhone = preg_replace('/[^0-9]/', '', $member->phone ?: '56949877316');
+                        @endphp
+                        <a href="https://wa.me/{{ $memberPhone }}?text={{ urlencode('Hola ' . $member->full_name . ', te contacto desde el Directorio Oficial de GAE AG para consultar por tus servicios.') }}" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="Contactar por WhatsApp a {{ $member->full_name }}"
+                           class="py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.144 4.175 4.287-1.124zm11.383-6.183c-.309-.154-1.826-.901-2.109-1.004-.284-.103-.491-.154-.698.154-.207.309-.801 1.004-.982 1.211-.181.207-.362.232-.67.077-.309-.154-1.306-.481-2.488-1.535-.919-.82-1.54-1.833-1.721-2.142-.181-.309-.019-.476.135-.63.139-.138.309-.362.464-.542.155-.181.207-.309.31-.516.103-.207.052-.387-.026-.542-.078-.154-.698-1.681-.957-2.301-.252-.603-.509-.522-.698-.531-.18-.009-.387-.009-.595-.009-.207 0-.542.078-.826.387-.284.309-1.085 1.061-1.085 2.589 0 1.528 1.112 3.004 1.267 3.211.155.207 2.189 3.342 5.304 4.686.741.32 1.319.511 1.77.654.743.236 1.419.203 1.953.123.596-.089 1.826-.746 2.084-1.467.258-.721.258-1.339.181-1.467-.078-.128-.284-.206-.593-.361z"/></svg>
+                            <span class="hidden sm:inline">Contactar</span>
                         </a>
 
                         <button onclick="navigator.clipboard.writeText('{{ $member->public_url }}'); alert('¡Enlace copiado al portapapeles!');" 
                                 title="Copiar Enlace Público"
                                 aria-label="Copiar Enlace Público del Socio"
-                                class="p-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 transition-all min-h-[44px] min-w-[44px] flex items-center justify-center">
+                                class="p-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 transition-all min-h-[44px] min-w-[44px] flex items-center justify-center">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                         </button>
                     </div>

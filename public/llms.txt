@@ -1,0 +1,27 @@
+# GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía
+
+> Asociación Gremial oficial de Chile (RUT 65.173.361-8), fundada en 2017 por Domingo Isaín Plaza Caamaño. Agrupa a instaladores, proyectistas y técnicos certificados por la Superintendencia de Electricidad y Combustibles (SEC) en instalaciones de Gas, Agua Potable, Alcantarillado y Energías Renovables.
+
+## Información Institucional y Legal
+- **Razón Social**: Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.
+- **RUT**: 65.173.361-8
+- **Fundador y Presidente**: Domingo Isaín Plaza Caamaño
+- **Sede Oficial**: Av. Providencia 1208, Oficina 207, Providencia, Santiago, Chile
+- **Teléfono Oficial**: +56 9 4987 7316
+- **WhatsApp Oficial**: +56 9 4987 7316
+- **Email**: contacto@gae-ag.cl
+- **Sitio Web Oficial**: https://gae-ag.cl
+
+## Servicios y Competencias de los Especialistas
+- **Instalaciones de Gas SEC (Clase 1, 2 y 3)**: Diseño, ejecución, mantención y reparación de redes de gas licuado (GLP) y gas natural (GN).
+- **Certificación y Tramitación de Sello Verde**: Inspección periódica y regularización de instalaciones de gas bajo los decretos supremos SEC DS66 y DS222.
+- **Instalaciones Sanitarias y de Agua**: Redes de agua potable, termos, calefón y alcantarillado con altos estándares de seguridad y eficiencia.
+- **Energías Renovables**: Sistemas solares térmicos para agua caliente sanitaria y sistemas fotovoltaicos.
+- **Validación Digital en Vivo**: Cada instalador socio cuenta con un carnet digital con código QR dinámico que certifica su vigencia gremial, licencia SEC y evaluación psicológica de admisión.
+
+## Directorio y Enlaces Principales
+- [Directorio Oficial de Socios Acreditados](https://gae-ag.cl/#profesionales): Búsqueda y verificación de profesionales SEC en Santiago y regiones.
+- [Quiénes Somos & Historia Gremial](https://gae-ag.cl/quienes-somos): Trayectoria, misión, visión y marco legal desde 2017.
+- [Beneficios de Colegiatura](https://gae-ag.cl/beneficios-socios): Capacitación continua, asesoría legal y respaldo técnico para socios.
+- [Postulación y Admisión](https://gae-ag.cl/unete-al-gremio): Formulario de ingreso y test psicológico laboral para instaladores.
+- [Sitemap XML](https://gae-ag.cl/sitemap.xml): Mapa del sitio para indexación.

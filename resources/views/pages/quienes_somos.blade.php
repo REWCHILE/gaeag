@@ -3,6 +3,41 @@
 @section('title', 'Quiénes Somos & Historia Gremial (2017 - 2026) - GAE AG | Gas, Agua y Energía')
 @section('meta_description', 'Recorre la historia visual interactiva de GAE AG. La idea nació en 2017 y fue fundada y legalizada el 29 de Septiembre de 2018 por Domingo Isaín Plaza Caamaño (RUT 65.173.361-8).')
 
+@push('head')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "AboutPage",
+                "@id": "{{ route('pages.quienes_somos') }}#about",
+                "url": "{{ route('pages.quienes_somos') }}",
+                "name": "Quiénes Somos & Historia Gremial - GAE AG",
+                "description": "Historia y trayectoria de GAE AG, Asociación Gremial fundada por Domingo Isaín Plaza Caamaño.",
+                "isPartOf": { "@id": "{{ url('/#website') }}" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "{{ route('home') }}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Quiénes Somos",
+                        "item": "{{ route('pages.quienes_somos') }}"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+@endpush
+
 @section('content')
 
 <!-- Hero Section -->
