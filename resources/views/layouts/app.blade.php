@@ -363,14 +363,20 @@
 
             if (progressBarVertical || backToTopBtn) {
                 let scrollScheduled = false;
+                let cachedTotalHeight = 0;
+                const updateHeight = () => {
+                    cachedTotalHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+                };
+                window.addEventListener('resize', updateHeight, { passive: true });
+                setTimeout(updateHeight, 500);
+
                 window.addEventListener('scroll', () => {
                     if (!scrollScheduled) {
                         requestAnimationFrame(() => {
-                            const scrollPos = window.scrollY;
-                            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-                            if (totalHeight > 0 && progressBarVertical) {
-                                progressBarVertical.style.height = (scrollPos / totalHeight * 100) + '%';
+                            if (progressBarVertical && cachedTotalHeight > 0) {
+                                progressBarVertical.style.height = (scrollPos / cachedTotalHeight * 100) + '%';
                             }
 
                             if (backToTopBtn) {

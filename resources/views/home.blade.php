@@ -23,50 +23,50 @@
 <section class="relative overflow-hidden bg-slate-950 text-white pt-12 pb-20 lg:pt-20 lg:pb-28" x-data="secVerificationApp">
     
     <!-- Hero Background Image Slider Carousel (Vibrant, Clear & Human) -->
-    <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0, loadOthers: false }" x-init="setTimeout(() => { loadOthers = true }, 2500); setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
+    <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
         <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint with Responsive srcset) -->
         <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-85 overflow-hidden"
              :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
             <img src="{{ asset('images/slider/hero_gas_mobile.webp') }}"
-                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 480w, {{ asset('images/slider/hero_gas.webp') }} 960w"
-                 sizes="(max-width: 640px) 100vw, 960px"
+                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 440w, {{ asset('images/slider/hero_gas.webp') }} 800w"
+                 sizes="(max-width: 640px) 100vw, 800px"
                  alt="Profesionales Gas SEC Acreditados"
                  fetchpriority="high"
                  loading="eager"
-                 width="960"
-                 height="535"
+                 width="800"
+                 height="446"
                  class="w-full h-full object-cover">
         </div>
 
-        <!-- Slide 2: Agua & Sanitario Engineer (Deferred) -->
+        <!-- Slide 2: Agua & Sanitario Engineer (Deferred strictly until slide 2 triggers) -->
         <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 overflow-hidden"
              :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0 scale-100': currentSlide !== 1 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
-            <template x-if="loadOthers">
-                <img src="{{ asset('images/slider/hero_water.webp') }}"
-                     srcset="{{ asset('images/slider/hero_water_mobile.webp') }} 540w, {{ asset('images/slider/hero_water.webp') }} 1000w"
-                     sizes="100vw"
+            <template x-if="currentSlide === 1 || currentSlide === 2">
+                <img src="{{ asset('images/slider/hero_water_mobile.webp') }}"
+                     srcset="{{ asset('images/slider/hero_water_mobile.webp') }} 440w, {{ asset('images/slider/hero_water.webp') }} 800w"
+                     sizes="(max-width: 640px) 100vw, 800px"
                      alt="Ingeniería y Servicios Sanitarios"
                      loading="lazy"
-                     width="1000"
-                     height="558"
+                     width="800"
+                     height="446"
                      class="w-full h-full object-cover">
             </template>
         </div>
 
-        <!-- Slide 3: Energías Renovables Specialist (Deferred) -->
+        <!-- Slide 3: Energías Renovables Specialist (Deferred strictly until slide 3 triggers) -->
         <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 overflow-hidden"
              :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0 scale-100': currentSlide !== 2 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
-            <template x-if="loadOthers">
-                <img src="{{ asset('images/slider/hero_solar.webp') }}"
-                     srcset="{{ asset('images/slider/hero_solar_mobile.webp') }} 540w, {{ asset('images/slider/hero_solar.webp') }} 1000w"
-                     sizes="100vw"
+            <template x-if="currentSlide === 2">
+                <img src="{{ asset('images/slider/hero_solar_mobile.webp') }}"
+                     srcset="{{ asset('images/slider/hero_solar_mobile.webp') }} 440w, {{ asset('images/slider/hero_solar.webp') }} 800w"
+                     sizes="(max-width: 640px) 100vw, 800px"
                      alt="Energías Renovables y Solar"
                      loading="lazy"
-                     width="1000"
-                     height="558"
+                     width="800"
+                     height="446"
                      class="w-full h-full object-cover">
             </template>
         </div>
