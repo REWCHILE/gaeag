@@ -42,17 +42,20 @@
     <meta name="twitter:description" content="@yield('meta_description', $defaultMetaDesc)">
     <meta name="twitter:image" content="@yield('og_image', asset('images/GAEGAG.jpg'))">
 
-    <!-- Google Font: Inter (Optimized Non-Blocking) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    </noscript>
+    <!-- Local Inter Font (Self-Hosted, Preloaded & Zero Layout Shift font-display: optional) -->
+    <link rel="preload" href="{{ asset('fonts/inter.woff2') }}" as="font" type="font/woff2" crossorigin>
 
     <!-- Inlined Production CSS (Zero Network Requests, 0ms Render-Blocking) -->
     <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: optional;
+            src: url('{{ asset('fonts/inter.woff2') }}') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
         {!! file_get_contents(public_path('css/app.min.css')) !!}
     </style>
 
