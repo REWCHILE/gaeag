@@ -59,8 +59,7 @@
         {!! file_get_contents(public_path('css/app.min.css')) !!}
     </style>
 
-    <!-- AlpineJS with Intersect Plugin (Self-Hosted Local, Fast & Long-Term Cached) -->
-    <script defer src="{{ asset('js/alpine-intersect.min.js') }}"></script>
+    <!-- AlpineJS Core (Self-Hosted Local, Fast & Long-Term Cached) -->
     <script defer src="{{ asset('js/alpine.min.js') }}"></script>
     
     <style>

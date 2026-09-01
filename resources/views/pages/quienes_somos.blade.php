@@ -402,3 +402,7 @@
 </section>
 
 @endsection
+
+@push('scripts')
+    <script defer src="{{ asset('js/alpine-intersect.min.js') }}"></script>
+@endpush

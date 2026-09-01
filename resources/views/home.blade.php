@@ -651,18 +651,20 @@
 
 @push('scripts')
 <script>
+    window.__MEMBERS_CACHE__ = @json($membersSearch ?? []);
+
     document.addEventListener('alpine:init', () => {
         Alpine.data('secVerificationApp', () => ({
             secQuery: '',
             verifiedMember: null,
-            members: @json($membersSearch ?? []),
             verifySec() {
                 const query = this.secQuery.trim().toLowerCase();
                 if (!query) {
                     this.verifiedMember = null;
                     return;
                 }
-                this.verifiedMember = this.members.find(m => 
+                const list = window.__MEMBERS_CACHE__ || [];
+                this.verifiedMember = list.find(m => 
                     (m.rut && m.rut.toLowerCase().includes(query)) || 
                     (m.sec_licence && m.sec_licence.toLowerCase().includes(query)) ||
                     (m.full_name && m.full_name.toLowerCase().includes(query))
