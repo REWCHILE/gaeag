@@ -18,6 +18,19 @@ class HomeController extends Controller
             ->orderBy('id', 'asc')
             ->get();
 
+        $membersSearch = $members->map(fn($m) => [
+            'id' => $m->id,
+            'full_name' => $m->full_name,
+            'rut' => $m->rut,
+            'sec_licence' => $m->sec_licence,
+            'sec_class' => $m->sec_class,
+            'specialty' => $m->specialty,
+            'city' => $m->city,
+            'region' => $m->region,
+            'slug' => $m->slug,
+            'photo_url' => $m->photo_url
+        ]);
+
         $faqs = Faq::where('is_published', true)
             ->orderBy('order', 'asc')
             ->get();
@@ -106,6 +119,6 @@ class HomeController extends Controller
             })->toArray()
         ];
 
-        return view('home', compact('president', 'members', 'faqs', 'organizationSchema', 'faqSchema'));
+        return view('home', compact('president', 'members', 'membersSearch', 'faqs', 'organizationSchema', 'faqSchema'));
     }
 }

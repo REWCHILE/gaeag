@@ -23,20 +23,22 @@
 <section class="relative overflow-hidden bg-slate-950 text-white pt-12 pb-20 lg:pt-20 lg:pb-28" x-data="secVerificationApp">
     
     <!-- Hero Background Image Slider Carousel (Vibrant, Clear & Human) -->
-    <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 5000)">
-        <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint with Responsive srcset) -->
+    <div class="absolute inset-0 z-0 pointer-events-none" x-data="{ currentSlide: 0 }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % 3 }, 6000)">
+        <!-- Slide 1: Gas SEC Technician (LCP - Immediate Paint with Strict Picture) -->
         <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-85 overflow-hidden"
              :class="{ 'opacity-85 scale-105': currentSlide === 0, 'opacity-0 scale-100': currentSlide !== 0 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
-            <img src="{{ asset('images/slider/hero_gas_mobile.webp') }}"
-                 srcset="{{ asset('images/slider/hero_gas_mobile.webp') }} 440w, {{ asset('images/slider/hero_gas.webp') }} 800w"
-                 sizes="(max-width: 640px) 100vw, 800px"
-                 alt="Profesionales Gas SEC Acreditados"
-                 fetchpriority="high"
-                 loading="eager"
-                 width="800"
-                 height="446"
-                 class="w-full h-full object-cover">
+            <picture>
+                <source media="(max-width: 640px)" srcset="{{ asset('images/slider/hero_gas_mobile.webp') }}">
+                <source media="(min-width: 641px)" srcset="{{ asset('images/slider/hero_gas.webp') }}">
+                <img src="{{ asset('images/slider/hero_gas_mobile.webp') }}"
+                     alt="Profesionales Gas SEC Acreditados"
+                     fetchpriority="high"
+                     loading="eager"
+                     width="720"
+                     height="401"
+                     class="w-full h-full object-cover">
+            </picture>
         </div>
 
         <!-- Slide 2: Agua & Sanitario Engineer (Deferred strictly until slide 2 triggers) -->
@@ -44,14 +46,16 @@
              :class="{ 'opacity-85 scale-105': currentSlide === 1, 'opacity-0 scale-100': currentSlide !== 1 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
             <template x-if="currentSlide === 1 || currentSlide === 2">
-                <img src="{{ asset('images/slider/hero_water_mobile.webp') }}"
-                     srcset="{{ asset('images/slider/hero_water_mobile.webp') }} 440w, {{ asset('images/slider/hero_water.webp') }} 800w"
-                     sizes="(max-width: 640px) 100vw, 800px"
-                     alt="Ingeniería y Servicios Sanitarios"
-                     loading="lazy"
-                     width="800"
-                     height="446"
-                     class="w-full h-full object-cover">
+                <picture>
+                    <source media="(max-width: 640px)" srcset="{{ asset('images/slider/hero_water_mobile.webp') }}">
+                    <source media="(min-width: 641px)" srcset="{{ asset('images/slider/hero_water.webp') }}">
+                    <img src="{{ asset('images/slider/hero_water_mobile.webp') }}"
+                         alt="Ingeniería y Servicios Sanitarios"
+                         loading="lazy"
+                         width="720"
+                         height="401"
+                         class="w-full h-full object-cover">
+                </picture>
             </template>
         </div>
 
@@ -60,14 +64,16 @@
              :class="{ 'opacity-85 scale-105': currentSlide === 2, 'opacity-0 scale-100': currentSlide !== 2 }"
              style="transition: opacity 1.5s ease-in-out, transform 8s ease-out;">
             <template x-if="currentSlide === 2">
-                <img src="{{ asset('images/slider/hero_solar_mobile.webp') }}"
-                     srcset="{{ asset('images/slider/hero_solar_mobile.webp') }} 440w, {{ asset('images/slider/hero_solar.webp') }} 800w"
-                     sizes="(max-width: 640px) 100vw, 800px"
-                     alt="Energías Renovables y Solar"
-                     loading="lazy"
-                     width="800"
-                     height="446"
-                     class="w-full h-full object-cover">
+                <picture>
+                    <source media="(max-width: 640px)" srcset="{{ asset('images/slider/hero_solar_mobile.webp') }}">
+                    <source media="(min-width: 641px)" srcset="{{ asset('images/slider/hero_solar.webp') }}">
+                    <img src="{{ asset('images/slider/hero_solar_mobile.webp') }}"
+                         alt="Energías Renovables y Solar"
+                         loading="lazy"
+                         width="720"
+                         height="401"
+                         class="w-full h-full object-cover">
+                </picture>
             </template>
         </div>
 
@@ -649,7 +655,7 @@
         Alpine.data('secVerificationApp', () => ({
             secQuery: '',
             verifiedMember: null,
-            members: @json($members),
+            members: @json($membersSearch ?? []),
             verifySec() {
                 const query = this.secQuery.trim().toLowerCase();
                 if (!query) {
