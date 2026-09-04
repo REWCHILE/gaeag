@@ -55,7 +55,7 @@ class HomeController extends Controller
                         'name' => 'Domingo Isaín Plaza Caamaño',
                         'jobTitle' => 'Presidente y Fundador'
                     ],
-                    'description' => 'Asociación gremial oficial chilena fundada en 2017. Agrupa a instaladores, proyectistas y técnicos certificados por la SEC en Gas, Agua y Energías Renovables.',
+                    'description' => 'Asociación gremial oficial chilena fundada en 2017 por Domingo Isaín Plaza Caamaño. Agrupa a instaladores y proyectistas certificados y opera como observatorio normativo técnico con seguimiento continuo de regulaciones de la SEC, SISS, SEREMI, Ministerio de Energía, Ministerio del Medio Ambiente, MINVU, MOP y Ley Chile.',
                     'address' => [
                         '@type' => 'PostalAddress',
                         'streetAddress' => 'Av. Providencia 1208, Oficina 207',
@@ -86,10 +86,19 @@ class HomeController extends Controller
                         'availableLanguage' => ['Spanish']
                     ],
                     'knowsAbout' => [
-                        'Instalaciones de Gas SEC Clase 1, 2 y 3',
-                        'Certificación y Regularización Sello Verde de Gas',
+                        'Superintendencia de Electricidad y Combustibles SEC',
                         'Normativa SEC Decreto Supremo DS66 y DS222',
-                        'Instalaciones Sanitarias y Redes de Agua',
+                        'Certificación y Regularización Sello Verde de Gas',
+                        'Instalaciones de Gas SEC Clase 1, 2 y 3',
+                        'Superintendencia de Servicios Sanitarios SISS DFL 382 y DFL 70',
+                        'Instalaciones Sanitarias y Redes de Agua Potable y Alcantarillado',
+                        'Secretarías Regionales Ministeriales SEREMI Salud, Energía y Vivienda',
+                        'Ministerio de Energía Ley 21.305 de Eficiencia Energética',
+                        'Generación Distribuida Net Billing Ley 20.571 y Ley 21.118',
+                        'Ministerio del Medio Ambiente MMA Ley Marco de Cambio Climático 21.455',
+                        'Ministerio de Vivienda y Urbanismo MINVU Ordenanza General OGUC',
+                        'Ministerio de Obras Públicas MOP Reglamento RIDAA DS 50 y DGA',
+                        'Ley Chile Biblioteca del Congreso Nacional BCN Seguimiento Normativo',
                         'Sistemas de Energías Renovables y Solar Térmico'
                     ]
                 ],

@@ -1,44 +1,79 @@
 # GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía (Documentación Completa)
 
-## 1. Identidad Institucional
+## 1. Identidad Institucional y Misión
 - **Nombre Legal**: Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.
 - **Sigla / Nombre Comercial**: GAE AG
 - **RUT**: 65.173.361-8
-- **Año de Fundación**: 2017 (Legalizada el 29 de Septiembre de 2018)
-- **Presidente Fundador**: Domingo Isaín Plaza Caamaño (Instalador SEC Licencia N° 1.832.551-7)
+- **Año de Fundación**: 2017 (Iniciativa de colegiatura técnica; constitución y legalización formal el 29 de Septiembre de 2018).
+- **Presidente Fundador**: Domingo Isaín Plaza Caamaño (Instalador SEC Licencia N° 1.832.551-7, RUT 12.738.961-6).
 - **Domicilio Legal**: Av. Providencia 1208, Oficina 207, Comuna de Providencia, Región Metropolitana, Santiago de Chile.
 - **Canales de Atención**: Teléfono/WhatsApp: +56 9 4987 7316 | Email: contacto@gae-ag.cl | Web: https://gae-ag.cl
+- **Rol Técnico**: GAE AG actúa como un gremio profesional y un **Observatorio Técnico y Normativo** en Chile, cuya labor es mantener permanentemente actualizados a instaladores, proyectistas y clientes sobre las exigencias de seguridad, directrices reglamentarias, circulares de fiscalización y dictámenes gubernamentales vigentes.
 
 ---
 
-## 2. Marco Normativo y Regulaciones Técnicas Aplicadas
-Los profesionales miembros de GAE AG operan bajo las normativas vigentes del Ministerio de Energía y la Superintendencia de Electricidad y Combustibles (SEC) de Chile:
-1. **Decreto Supremo DS 66 / 2007 (Ministerio de Economía, Fomento y Reconstrucción)**: Reglamento de Instalaciones Interiores y Medidores de Gas. Establece los requisitos de seguridad técnica, ventilaciones, conductos de evacuación de gases y pruebas de hermeticidad.
-2. **Decreto Supremo DS 222 / 1996**: Reglamento de Instaladores de Gas y Procedimientos de Certificación. Define las competencias y alcances de las licencias Clase 1, Clase 2 y Clase 3.
-3. **Sello Verde de Gas**: Procedimiento de certificación e inspección periódica de instalaciones interiores (edificios habitacionales, comerciales e industriales) para garantizar la ausencia de fugas de monóxido de carbono (CO) y gas combustible.
-4. **Normativa Sanitaria RIDAA (Decreto 50 / MOP)**: Reglamento de Instalaciones Domiciliarias de Agua Potable y Alcantarillado.
+## 2. Marco Normativo Integral y Entidades Gubernamentales Reguladoras en Chile
+
+Los profesionales pertenecientes a GAE AG operan bajo el seguimiento riguroso de las siguientes 8 entidades del Estado de Chile y sus respectivos marcos regulatorios:
+
+### 2.1. Superintendencia de Electricidad y Combustibles (SEC)
+- **Ley 18.410**: Ley Orgánica de la SEC que establece las facultades de fiscalización y sanción sobre instalaciones eléctricas y de combustibles.
+- **Decreto Supremo DS 66 / 2007 (Ministerio de Economía)**: Reglamento de Instalaciones Interiores y Medidores de Gas. Regula ventilaciones, pruebas de hermeticidad, conductos colectivos e individuales, y distancias de seguridad.
+- **Decreto Supremo DS 222 / 1996**: Reglamento de Instaladores de Gas y Procedimientos de Certificación. Define las categorías Clase 1, Clase 2 y Clase 3.
+- **Protocolo de Sello Verde de Gas**: Procedimiento técnico obligatorio de inspección periódica en edificios y viviendas para prevenir fugas de gas y emanaciones mortales de monóxido de carbono (CO).
+
+### 2.2. Superintendencia de Servicios Sanitarios (SISS)
+- **Decreto con Fuerza de Ley DFL N° 382 (MOP)**: Ley General de Servicios Sanitarios, que regula la concesión, operación y fiscalización de los servicios de agua potable y alcantarillado.
+- **DFL N° 70**: Ley de Tarifas de los Servicios Sanitarios.
+- **Control y Calidad**: Vigilancia de estándares de presión hidráulica, calidad físico-química del agua, desinfección, y normativas de descargas de residuos industriales líquidos (RILES - DS 609).
+
+### 2.3. Secretarías Regionales Ministeriales (SEREMI)
+- **SEREMI de Salud**: Aplicación del **Código Sanitario (DFL 725)**, otorgamiento de Resoluciones Sanitarias de funcionamiento, inspección higiénica de aguas, sistemas de tratamiento de aguas servidas particulares y almacenamiento de sustancias peligrosas (DS 43).
+- **SEREMI de Energía y SEREMI de Vivienda**: Coordinación intersectorial a nivel regional para el cumplimiento territorial de planes energéticos y habitacionales.
+
+### 2.4. Ministerio de Energía
+- **Ley 21.305 de Eficiencia Energética**: Promoción del uso racional de energía en edificaciones, auditorías energéticas y etiquetado de eficiencia en viviendas.
+- **Leyes 20.571 y 21.118 (Generación Distribuida / Net Billing)**: Marco regulatorio que faculta a usuarios residenciales y comerciales para instalar sistemas solares fotovoltaicos y comercializar excedentes a la red de distribución.
+- **Reglamentación Solar Térmica**: Fomento e integración de colectores solares para agua caliente sanitaria (ACS).
+
+### 2.5. Ministerio del Medio Ambiente (MMA)
+- **Ley 21.455 Ley Marco de Cambio Climático**: Metas vinculantes de carbono neutralidad y resiliencia climática hacia 2050.
+- **Planes de Descontaminación Atmosférica (PDA)**: Normas sobre emisiones de material particulado y gases contaminantes generados por calderas, calefactores y grupos generadores en zonas saturadas de Chile.
+
+### 2.6. Ministerio de Vivienda y Urbanismo (MINVU)
+- **Decreto Supremo DS 47 - Ordenanza General de Urbanismo y Construcciones (OGUC)**: Normas de diseño arquitectónico y constructivo para ductos de ventilación, shafts de gas y agua, vías de evacuación y resistencia al fuego.
+- **Acondicionamiento Térmico**: Reglamentación térmica para envolventes y prevención de condensación en viviendas y condominios.
+
+### 2.7. Ministerio de Obras Públicas (MOP)
+- **Decreto Supremo DS 50 / 2002 - RIDAA**: Reglamento de Instalaciones Domiciliarias de Agua Potable y Alcantarillado. Establece las normas de cálculo, dimensionamiento de matrices, estanques de acumulación, grupos de presión y redes sanitarias.
+- **Dirección General de Aguas (DGA) y Código de Aguas (DFL 1.122)**: Regulación sobre derechos de aprovechamiento de aguas, pozos profundos y captaciones.
+
+### 2.8. Ley Chile 🇨🇱 (Biblioteca del Congreso Nacional - BCN / leychile.cl)
+- Seguimiento legislativo activo del compendio normativo de la República de Chile.
+- Monitoreo sistemático de oficios de fiscalización emitidos por la Cámara de Diputadas y Diputados de Chile, dictámenes de la Contraloría General de la República y resoluciones exentas emitidas por organismos fiscalizadores.
 
 ---
 
-## 3. Clases de Instaladores de Gas SEC
-- **Instalador de Gas Clase 1**: Habilitado para proyectos e instalaciones de gas en media y baja presión, sin límite de potencia, incluyendo instalaciones industriales, comerciales, matrices y redes de distribución.
-- **Instalador de Gas Clase 2**: Habilitado para instalaciones interiores de gas en media y baja presión hasta una potencia instalada máxima determinada (comercial y residencial).
-- **Instalador de Gas Clase 3**: Habilitado para instalaciones interiores de gas en baja presión para viviendas unifamiliares y artefactos domésticos estándar.
+## 3. Clases de Licencias de Instaladores de Gas SEC
+- **Instalador de Gas Clase 1**: Habilitado para proyectar y ejecutar instalaciones de gas en media y baja presión sin límite de potencia (grandes redes industriales, matrices de distribución y centrales térmicas).
+- **Instalador de Gas Clase 2**: Habilitado para instalaciones en media y baja presión en locales comerciales y edificios habitacionales hasta el límite reglamentario de potencia.
+- **Instalador de Gas Clase 3**: Habilitado para instalaciones en baja presión en residencias unifamiliares y artefactos domésticos estándar.
 
 ---
 
-## 4. Pilares y Proceso de Admisión Ético-Técnico
-A diferencia de directorios abiertos sin filtro, GAE AG exige a sus postulantes:
-1. **Acreditación SEC Vigente**: Verificación formal de la licencia ante los registros oficiales de la Superintendencia.
-2. **Evaluación Psicológica Laboral**: Test psicométrico estructurado para evaluar responsabilidad ética, toma de decisiones bajo presión y enfoque en la seguridad humana.
-3. **Código de Ética Gremial**: Compromiso con la transparencia tarifaria, emisión de certificados reglamentarios y garantía de servicio para el cliente final.
+## 4. Filtro Ético y Admisión de Profesionales
+Para formar parte del Directorio Oficial de GAE AG, todo profesional debe superar:
+1. **Validación SEC Oficial**: Cotejo directo de la licencia vigente ante el registro público de la Superintendencia.
+2. **Evaluación Psicométrica Laboral**: Test estructurado que evalúa apego estricto a protocolos de seguridad, criterio ante situaciones de riesgo y honestidad profesional.
+3. **Compromiso Ético Gremial**: Tarifas transparentes, entrega oportuna de certificados de conformidad y garantía formal del servicio técnico prestado.
 
 ---
 
 ## 5. Directorio de Servicios y Enlaces
-- **Portal Principal y Verificador QR**: https://gae-ag.cl
-- **Directorio de Especialistas**: https://gae-ag.cl/#profesionales
+- **Portal Principal y Verificador QR SEC**: https://gae-ag.cl
+- **Directorio de Especialistas Acreditados**: https://gae-ag.cl/#profesionales
+- **Observatorio Normativo y Leyes de Chile**: https://gae-ag.cl/#marco-normativo
 - **Historia y Acta Fundacional**: https://gae-ag.cl/quienes-somos
 - **Beneficios de Colegiatura**: https://gae-ag.cl/beneficios-socios
 - **Admisión y Postulación de Nuevos Socios**: https://gae-ag.cl/unete-al-gremio
-- **Mapa del Sitio (Sitemap)**: https://gae-ag.cl/sitemap.xml
+- **Mapa del Sitio (Sitemap XML)**: https://gae-ag.cl/sitemap.xml

@@ -294,6 +294,296 @@
     </div>
 </section>
 
+<!-- Observatorio Normativo y Marco Regulatorio Técnico de Chile -->
+<section id="marco-normativo" class="py-20 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800">
+    <!-- Ambient Radial Glow Effects -->
+    <div class="absolute -top-32 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-semibold tracking-wide text-slate-300 shadow-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Observatorio Normativo & Vigilancia Legal GAE AG
+            </div>
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
+                Marco Normativo y Entidades <span class="bg-gradient-to-r from-emerald-400 via-sky-400 to-amber-400 bg-clip-text text-transparent">Reguladoras en Chile</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Nuestra Asociación Gremial realiza un seguimiento riguroso y permanente de las leyes, decretos supremos, dictámenes y oficios emitidos por los órganos gubernamentales fiscalizadores de Chile para mantener capacitados a nuestros socios y proteger la vida y seguridad de la comunidad.
+            </p>
+        </div>
+
+        <!-- Grid of 8 Regulatory Entities Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- 1. SEC -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-[11px] font-bold border border-emerald-500/20">
+                            Combustibles & Electricidad
+                        </span>
+                        <span class="text-xl">⚡</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-emerald-400 transition-colors">SEC</h3>
+                        <p class="text-xs text-slate-400 font-medium">Superintendencia de Electricidad y Combustibles</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">DS 66</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">DS 222</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">Ley 18.410</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">Sello Verde</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Reglamento de instalaciones interiores de gas, certificación de instaladores Clase 1, 2 y 3, pruebas de hermeticidad y fiscalización de sellos verdes en edificios y residencias.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Entidad Fiscalizadora</span>
+                    <a href="https://www.sec.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+                        sec.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. SISS -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-sky-500/50 hover:shadow-sky-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-400 text-[11px] font-bold border border-sky-500/20">
+                            Servicios Sanitarios & Agua
+                        </span>
+                        <span class="text-xl">💧</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-sky-400 transition-colors">SISS</h3>
+                        <p class="text-xs text-slate-400 font-medium">Superintendencia de Servicios Sanitarios</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-sky-300 font-mono">DFL 382</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-sky-300 font-mono">DFL 70</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-sky-300 font-mono">DS 609 RILES</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Ley General de Servicios Sanitarios, control de calidad y presión en redes de agua potable, colectores de alcantarillado y fiscalización de vertimiento de residuos líquidos.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Entidad Reguladora</span>
+                    <a href="https://www.siss.gob.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                        siss.gob.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. SEREMI -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-amber-500/50 hover:shadow-amber-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-[11px] font-bold border border-amber-500/20">
+                            Autoridad Sanitaria Regional
+                        </span>
+                        <span class="text-xl">🏛️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-amber-400 transition-colors">SEREMI</h3>
+                        <p class="text-xs text-slate-400 font-medium">Salud, Energía y Vivienda Regional</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono">DFL 725</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono">Código Sanitario</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono">DS 43 Sust. Peligrosas</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Otorgamiento de Resoluciones Sanitarias de funcionamiento, fiscalización ambiental de aguas particulares, almacenamiento seguro y cumplimiento territorial en todas las regiones de Chile.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Autoridad Regional</span>
+                    <a href="https://www.minsal.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                        seremisalud.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Ministerio de Energía -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-yellow-500/50 hover:shadow-yellow-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 text-[11px] font-bold border border-yellow-500/20">
+                            Transición Energética
+                        </span>
+                        <span class="text-xl">☀️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-yellow-400 transition-colors">Ministerio de Energía</h3>
+                        <p class="text-xs text-slate-400 font-medium">Políticas y Eficiencia Energética</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-yellow-300 font-mono">Ley 21.305</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-yellow-300 font-mono">Ley 20.571 Net Billing</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-yellow-300 font-mono">Ley 21.118</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Ley de Eficiencia Energética en edificaciones residenciales e industriales, marco de generación distribuida para inyección de excedentes solares a la red y sistemas térmicos solares.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Ministerio Rector</span>
+                    <a href="https://www.energia.gob.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-yellow-400 hover:text-yellow-300 flex items-center gap-1">
+                        energia.gob.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. MMA -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-[11px] font-bold border border-emerald-500/20">
+                            Sustentabilidad Ambiental
+                        </span>
+                        <span class="text-xl">🌿</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-emerald-400 transition-colors">Ministerio del Medio Ambiente</h3>
+                        <p class="text-xs text-slate-400 font-medium">MMA Chile</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">Ley 21.455</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">Cambio Climático</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono">Planes PDA</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Ley Marco de Cambio Climático hacia carbono neutralidad 2050, regulación de emisiones en calderas y equipos de combustión, y planes de descontaminación ambiental (PDA).
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Ministerio de Estado</span>
+                    <a href="https://mma.gob.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+                        mma.gob.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. MINVU -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-blue-500/50 hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-400 text-[11px] font-bold border border-blue-500/20">
+                            Vivienda & Urbanismo
+                        </span>
+                        <span class="text-xl">🏢</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-blue-400 transition-colors">MINVU</h3>
+                        <p class="text-xs text-slate-400 font-medium">Ministerio de Vivienda y Urbanismo</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-blue-300 font-mono">DS 47 OGUC</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-blue-300 font-mono">Shafts Técnicos</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-blue-300 font-mono">Acond. Térmico</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Ordenanza General de Urbanismo y Construcciones (OGUC): diseño constructivo de ductos de ventilación, shafts para medidores de gas y agua, y resistencia al fuego en edificios colectivos.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Normativa Edificación</span>
+                    <a href="https://www.minvu.gob.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                        minvu.gob.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 7. MOP -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-cyan-500/50 hover:shadow-cyan-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 text-[11px] font-bold border border-cyan-500/20">
+                            Obras Públicas & RIDAA
+                        </span>
+                        <span class="text-xl">🔧</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-cyan-400 transition-colors">MOP</h3>
+                        <p class="text-xs text-slate-400 font-medium">Ministerio de Obras Públicas</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono">DS 50 RIDAA</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono">DFL 1.122</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono">DGA Aguas</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Reglamento de Instalaciones Domiciliarias de Agua Potable y Alcantarillado (RIDAA), cálculo hidráulico de matrices, grupos de presión, estanques de acumulación y Código de Aguas.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Infraestructura Pública</span>
+                    <a href="https://www.mop.gob.cl" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+                        mop.gob.cl &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- 8. Ley Chile -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded-lg bg-red-500/10 text-red-400 text-[11px] font-bold border border-red-500/20">
+                            Legislación Nacional 🇨🇱
+                        </span>
+                        <span class="text-xl">⚖️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-white group-hover:text-red-400 transition-colors">Ley Chile 🇨🇱</h3>
+                        <p class="text-xs text-slate-400 font-medium">Biblioteca del Congreso Nacional (BCN)</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-red-300 font-mono">Leychile.cl</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-red-300 font-mono">Oficios BCN</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-red-300 font-mono">Normas NCh</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Seguimiento técnico permanente de leyes de la República, historial de oficios de fiscalización parlamentaria (Cámara de Diputadas/os), dictámenes y compendio legislativo de Chile.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400">Compendio Legal</span>
+                    <a href="https://www.bcn.cl/leychile" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-red-400 hover:text-red-300 flex items-center gap-1">
+                        bcn.cl/leychile &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Observatorio Banner / Callout -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 border border-slate-800 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Compromiso de Autorregulación Técnica</span>
+                <h4 class="text-xl sm:text-2xl font-black text-white">¿Necesitas asesoría técnica o regularización con respaldo normativo?</h4>
+                <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+                    Nuestros especialistas matriculados y directiva gremial se capacitan continuamente en dictámenes, circulares y modificaciones reglamentarias de estos 8 organismos oficiales de Chile.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
+                <a href="#profesionales" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-gae-green to-gae-blue hover:opacity-90 font-bold text-xs sm:text-sm text-white text-center shadow-lg transition-all min-h-[44px] flex items-center justify-center">
+                    Ver Profesionales Acreditados
+                </a>
+                <a href="{{ route('pages.quienes_somos') }}" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm text-center border border-slate-700 transition-all min-h-[44px] flex items-center justify-center">
+                    Conocer Historia Gremial
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- Directorio Interactivo de Socios SEC -->
 <section id="profesionales" class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ search: '', category: 'all' }">

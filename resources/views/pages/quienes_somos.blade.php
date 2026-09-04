@@ -88,6 +88,9 @@
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     El <strong>29 de Septiembre de 2018</strong> se constituye y legaliza formalmente ante el Ministerio de Economía y el SII la <strong>Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G. (RUT 65.173.361-8)</strong>, consolidándose como un referente nacional de autorregulación ética, certificación permanente y respaldo técnico bajo los decretos <strong>DS 66</strong> y <strong>DS 222</strong> de la SEC.
                 </p>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Actualmente, GAE AG opera como un <strong>Observatorio Técnico y Normativo</strong> que realiza un seguimiento riguroso y permanente de dictámenes, oficios de fiscalización y reformas reglamentarias emitidas por los órganos fiscalizadores del Estado de Chile: <strong>SEC, SISS, SEREMI, Ministerio de Energía, Ministerio del Medio Ambiente, MINVU, MOP y Ley Chile</strong>.
+                </p>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-4 border-t border-slate-100">
                     <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
@@ -381,6 +384,58 @@
                 <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                     Cero tolerancia a la negligencia técnica, honestidad absoluta en presupuestos y cobros, empatía y trato cordial al cliente, y solidaridad gremial para el crecimiento conjunto de nuestros socios.
                 </p>
+            </div>
+        </div>
+
+        <!-- Observatorio Normativo Nacional Card -->
+        <div class="mt-12 p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl space-y-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                        Vigilancia Regulatoria Permanente
+                    </span>
+                    <h3 class="text-2xl font-black text-white mt-2">Observatorio Normativo de Entidades Reguladoras de Chile</h3>
+                </div>
+                <a href="{{ route('home') }}#marco-normativo" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gae-green to-gae-blue text-white font-bold text-xs shadow-md hover:opacity-90 transition-all shrink-0">
+                    Ver Marco Normativo Completo &rarr;
+                </a>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                GAE AG realiza seguimiento continuo de dictámenes, circulares técnicas y oficios de fiscalización emanados de los principales organismos del Estado de Chile para capacitar a sus especialistas:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-emerald-400 block">⚡ SEC</span>
+                    <span class="text-[11px] text-slate-400">DS 66, DS 222, Sello Verde</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-sky-400 block">💧 SISS</span>
+                    <span class="text-[11px] text-slate-400">DFL 382, Redes Sanitarias</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-amber-400 block">🏛️ SEREMI</span>
+                    <span class="text-[11px] text-slate-400">Salud, Energía, Resoluciones</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-yellow-400 block">☀️ Min. Energía</span>
+                    <span class="text-[11px] text-slate-400">Ley 21.305, Net Billing</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-emerald-300 block">🌿 MMA</span>
+                    <span class="text-[11px] text-slate-400">Ley 21.455, Emisiones</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-blue-400 block">🏢 MINVU</span>
+                    <span class="text-[11px] text-slate-400">OGUC DS 47, Shafts y Ductos</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-cyan-400 block">🔧 MOP</span>
+                    <span class="text-[11px] text-slate-400">DS 50 RIDAA, Aguas DGA</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                    <span class="font-bold text-red-400 block">⚖️ Ley Chile 🇨🇱</span>
+                    <span class="text-[11px] text-slate-400">BCN, Oficios Parlamentarios</span>
+                </div>
             </div>
         </div>
     </div>

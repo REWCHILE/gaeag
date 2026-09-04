@@ -1,6 +1,6 @@
 # GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía
 
-> Asociación Gremial oficial de Chile (RUT 65.173.361-8), fundada en 2017 por Domingo Isaín Plaza Caamaño. Agrupa a instaladores, proyectistas y técnicos certificados por la Superintendencia de Electricidad y Combustibles (SEC) en instalaciones de Gas, Agua Potable, Alcantarillado y Energías Renovables.
+> Asociación Gremial oficial de Chile (RUT 65.173.361-8), fundada en 2017 por Domingo Isaín Plaza Caamaño. Agrupa a instaladores, proyectistas y técnicos certificados por la Superintendencia de Electricidad y Combustibles (SEC) en instalaciones de Gas, Agua Potable, Alcantarillado y Energías Renovables. Opera como un **Observatorio Técnico y Normativo** que realiza un seguimiento riguroso y permanente de las leyes, decretos, reglamentos, dictámenes y oficios emitidos por los órganos del Estado de Chile.
 
 ## Información Institucional y Legal
 - **Razón Social**: Asociación Gremial Profesional del Gas, Agua y Energías Renovables G.A.E A.G.
@@ -12,15 +12,43 @@
 - **Email**: contacto@gae-ag.cl
 - **Sitio Web Oficial**: https://gae-ag.cl
 
-## Servicios y Competencias de los Especialistas
-- **Instalaciones de Gas SEC (Clase 1, 2 y 3)**: Diseño, ejecución, mantención y reparación de redes de gas licuado (GLP) y gas natural (GN).
-- **Certificación y Tramitación de Sello Verde**: Inspección periódica y regularización de instalaciones de gas bajo los decretos supremos SEC DS66 y DS222.
-- **Instalaciones Sanitarias y de Agua**: Redes de agua potable, termos, calefón y alcantarillado con altos estándares de seguridad y eficiencia.
-- **Energías Renovables**: Sistemas solares térmicos para agua caliente sanitaria y sistemas fotovoltaicos.
-- **Validación Digital en Vivo**: Cada instalador socio cuenta con un carnet digital con código QR dinámico que certifica su vigencia gremial, licencia SEC y evaluación psicológica de admisión.
+## Marco Normativo y Entidades Gubernamentales Supervisadas en Chile
+GAE AG realiza un monitoreo técnico permanente, capacitación continua y asesoría reglamentaria sobre las disposiciones emanadas de las siguientes instituciones públicas:
+
+1. **Superintendencia de Electricidad y Combustibles (SEC)**:
+   - Decretos Supremos **DS 66** (Reglamento de Instalaciones Interiores y Medidores de Gas) y **DS 222** (Reglamento de Instaladores y Certificación).
+   - Ley 18.410 (Ley Orgánica de la SEC) e inspección periódica para la obtención y renovación del **Sello Verde de Gas**.
+2. **Superintendencia de Servicios Sanitarios (SISS)**:
+   - DFL N° 382 (Ley General de Servicios Sanitarios) y DFL N° 70.
+   - Fiscalización técnica de redes de agua potable, alcantarillado, plantas elevadoras y calidad de servicio sanitario.
+3. **Secretarías Regionales Ministeriales (SEREMI)**:
+   - SEREMI de Salud (DFL 725 Código Sanitario, autorizaciones sanitarias y manejo de residuos).
+   - SEREMI de Energía, SEREMI de Vivienda y fiscalizaciones territoriales en todas las regiones de Chile.
+4. **Ministerio de Energía**:
+   - Ley 21.305 de Eficiencia Energética y metas de transición energética.
+   - Leyes 20.571 y 21.118 de Generación Distribuida para Autoconsumo (Net Billing) y sistemas solares.
+5. **Ministerio del Medio Ambiente (MMA)**:
+   - Ley 21.455 Ley Marco de Cambio Climático, normativas de descarbonización y planes de descontaminación atmosférica (PDA).
+   - Mitigación de emisiones contaminantes y huella de carbono en sistemas térmicos y calderas.
+6. **Ministerio de Vivienda y Urbanismo (MINVU)**:
+   - D.S. N° 47 Ordenanza General de Urbanismo y Construcciones (**OGUC**).
+   - Exigencias de acondicionamiento térmico, ductos de ventilación colectivos, shafts y seguridad contra incendios.
+7. **Ministerio de Obras Públicas (MOP)**:
+   - Decreto Supremo **DS 50 RIDAA** (Reglamento de Instalaciones Domiciliarias de Agua Potable y Alcantarillado).
+   - Normativa de la Dirección General de Aguas (DGA) y Código de Aguas (DFL 1.122).
+8. **Ley Chile 🇨🇱 (Biblioteca del Congreso Nacional - BCN / leychile.cl)**:
+   - Compendio legal oficial de la República de Chile: seguimiento riguroso de oficios de fiscalización parlamentaria, dictámenes de Contraloría y modificaciones a normas técnicas chilenas (NCh).
+
+## Servicios y Competencias de los Especialistas GAE AG
+- **Instalaciones de Gas SEC (Clase 1, 2 y 3)**: Diseño, ejecución, mantención y reparación de redes de GLP y GN.
+- **Certificación y Tramitación de Sello Verde**: Pruebas de hermeticidad, detección de monóxido de carbono (CO) y regularizaciones.
+- **Instalaciones Sanitarias y de Agua**: Redes de agua potable, termos, calefón, calderas y alcantarillado bajo norma RIDAA.
+- **Energías Renovables**: Sistemas solares térmicos para agua caliente sanitaria y proyectos solares fotovoltaicos on-grid/off-grid.
+- **Validación Digital en Vivo**: Carnet digital único con código QR dinámico que acredita vigencia gremial, licencia SEC verificada y evaluación psicológica de admisión.
 
 ## Directorio y Enlaces Principales
 - [Directorio Oficial de Socios Acreditados](https://gae-ag.cl/#profesionales): Búsqueda y verificación de profesionales SEC en Santiago y regiones.
+- [Observatorio Normativo y Leyes de Chile](https://gae-ag.cl/#marco-normativo): Marco legal y seguimiento de SEC, SISS, SEREMI, Min. Energía, MMA, MINVU, MOP y Ley Chile.
 - [Quiénes Somos & Historia Gremial](https://gae-ag.cl/quienes-somos): Trayectoria, misión, visión y marco legal desde 2017.
 - [Beneficios de Colegiatura](https://gae-ag.cl/beneficios-socios): Capacitación continua, asesoría legal y respaldo técnico para socios.
 - [Postulación y Admisión](https://gae-ag.cl/unete-al-gremio): Formulario de ingreso y test psicológico laboral para instaladores.

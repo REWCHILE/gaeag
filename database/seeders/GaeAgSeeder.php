@@ -209,6 +209,12 @@ class GaeAgSeeder extends Seeder
                 'answer' => 'Puede contactar a GAE AG directamente a través de nuestro sitio web en el directorio público de profesionales, comunicándose al correo presidencia@gae-ag.cl o interactuando de forma directa vía WhatsApp con cualquiera de nuestros instaladores certificados en cada región de Chile.',
                 'category' => 'Contacto',
             ],
+            [
+                'order' => 11,
+                'question' => '¿Qué leyes, normativas y entidades gubernamentales supervisa y sigue GAE AG en Chile?',
+                'answer' => 'GAE AG opera como un observatorio técnico y gremial que realiza un seguimiento riguroso y permanente de normativas y oficios emitidos por 8 instituciones públicas de Chile: la Superintendencia de Electricidad y Combustibles (SEC - DS 66, DS 222, Ley 18.410), la Superintendencia de Servicios Sanitarios (SISS - DFL 382), las SEREMI de Salud, Energía y Vivienda (Código Sanitario), el Ministerio de Energía (Ley 21.305 de Eficiencia Energética y Net Billing), el Ministerio del Medio Ambiente (Ley 21.455 de Cambio Climático y Planes PDA), el Ministerio de Vivienda y Urbanismo (MINVU - OGUC DS 47), el Ministerio de Obras Públicas (MOP - RIDAA DS 50) y la legislación técnica oficial publicada en Ley Chile de la Biblioteca del Congreso Nacional (BCN).',
+                'category' => 'Marco Normativo',
+            ],
         ];
 
         foreach ($faqs as $faq) {

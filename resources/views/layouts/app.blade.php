@@ -20,7 +20,7 @@
 
     <!-- SEO First Meta Tags -->
     <meta name="description" content="@yield('meta_description', $defaultMetaDesc)">
-    <meta name="keywords" content="GAE AG, Domingo Isain Plaza Caamano, Profesionales del Gas, Gasfiter SEC, Certificado SEC, Agua y Energia, Asociacion Gremial Gas Chile, Sello Verde Gas, Instaladores Autorizados Chile, Decretos SEC DS66 DS222, Certificacion SEC Santiago">
+    <meta name="keywords" content="GAE AG, Domingo Isain Plaza Caamano, Profesionales del Gas, Gasfiter SEC, Certificado SEC, Agua y Energia, Asociacion Gremial Gas Chile, Sello Verde Gas, Instaladores Autorizados Chile, Decretos SEC DS66 DS222, SISS DFL 382, SEREMI, Ministerio de Energia, Ministerio Medio Ambiente, MINVU OGUC, MOP RIDAA DS50, Ley Chile BCN, Certificacion SEC Santiago">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Asociación Gremial GAE AG - Domingo Isaín Plaza Caamaño">
     <link rel="canonical" href="{{ url()->current() }}">
@@ -165,11 +165,12 @@
 
                 <!-- Modern Desktop Nav -->
                 <nav class="hidden md:flex items-center gap-1 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80">
-                    <a href="{{ route('home') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('home') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Inicio</a>
-                    <a href="{{ route('pages.quienes_somos') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.quienes_somos') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Quiénes Somos</a>
-                    <a href="{{ route('pages.beneficios') }}" class="px-3.5 py-2 text-xs font-bold {{ request()->routeIs('pages.beneficios') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Beneficios Socios</a>
-                    <a href="{{ route('home') }}#profesionales" class="px-3.5 py-2 text-xs font-bold text-slate-800 hover:text-sky-800 hover:bg-white rounded-xl transition-all">Socios SEC</a>
-                    <a href="{{ route('pages.unete') }}" class="px-4 py-2 text-xs font-bold text-emerald-800 bg-emerald-100/70 hover:bg-emerald-100 rounded-xl transition-all flex items-center gap-1 border border-emerald-300">
+                    <a href="{{ route('home') }}" class="px-3 py-2 text-xs font-bold {{ request()->routeIs('home') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Inicio</a>
+                    <a href="{{ route('pages.quienes_somos') }}" class="px-3 py-2 text-xs font-bold {{ request()->routeIs('pages.quienes_somos') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Quiénes Somos</a>
+                    <a href="{{ route('pages.beneficios') }}" class="px-3 py-2 text-xs font-bold {{ request()->routeIs('pages.beneficios') ? 'text-sky-800 bg-white shadow-xs' : 'text-slate-800 hover:text-sky-800 hover:bg-white' }} rounded-xl transition-all">Beneficios Socios</a>
+                    <a href="{{ route('home') }}#marco-normativo" class="px-3 py-2 text-xs font-bold text-slate-800 hover:text-sky-800 hover:bg-white rounded-xl transition-all">Marco Normativo</a>
+                    <a href="{{ route('home') }}#profesionales" class="px-3 py-2 text-xs font-bold text-slate-800 hover:text-sky-800 hover:bg-white rounded-xl transition-all">Socios SEC</a>
+                    <a href="{{ route('pages.unete') }}" class="px-3.5 py-2 text-xs font-bold text-emerald-800 bg-emerald-100/70 hover:bg-emerald-100 rounded-xl transition-all flex items-center gap-1 border border-emerald-300">
                         <span>⚡ Únete al Gremio</span>
                     </a>
                 </nav>
@@ -241,6 +242,10 @@
                             <span>Beneficios Socios</span>
                             <span class="text-slate-400">&rarr;</span>
                         </a>
+                        <a href="{{ route('home') }}#marco-normativo" @click="mobileNavOpen = false" class="px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors flex items-center justify-between text-sky-800">
+                            <span>Marco Normativo & Leyes</span>
+                            <span class="text-sky-600">&rarr;</span>
+                        </a>
                         <a href="{{ route('home') }}#profesionales" @click="mobileNavOpen = false" class="px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors flex items-center justify-between">
                             <span>Directorio de Socios SEC</span>
                             <span class="text-slate-400">&rarr;</span>
@@ -302,6 +307,7 @@
                         <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="{{ route('pages.quienes_somos') }}" class="hover:text-white transition-colors">Quiénes Somos</a></li>
                         <li><a href="{{ route('pages.beneficios') }}" class="hover:text-white transition-colors">Beneficios de Colegiatura</a></li>
+                        <li><a href="{{ route('home') }}#marco-normativo" class="hover:text-white transition-colors text-emerald-400">Marco Normativo & Leyes</a></li>
                         <li><a href="{{ route('home') }}#profesionales" class="hover:text-white transition-colors">Directorio de Socios</a></li>
                         <li><a href="{{ route('pages.unete') }}" class="hover:text-white transition-colors">⚡ Postulación y Test</a></li>
                     </ul>
