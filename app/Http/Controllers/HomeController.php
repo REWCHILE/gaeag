@@ -5,35 +5,45 @@ namespace App\Http\Controllers;
 use App\Models\Faq;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $president = Member::where('slug', 'domingo-isain-plaza-caamano')->first()
-            ?? Member::where('is_active', true)->first();
+        $homeData = Cache::remember('home_page_data_cache_v2', 3600, function () {
+            $president = Member::where('slug', 'domingo-isain-plaza-caamano')->first()
+                ?? Member::where('is_active', true)->first();
 
-        $members = Member::where('is_active', true)
-            ->with('certificates')
-            ->orderBy('id', 'asc')
-            ->get();
+            $members = Member::where('is_active', true)
+                ->with('certificates')
+                ->orderBy('id', 'asc')
+                ->get();
 
-        $membersSearch = $members->map(fn($m) => [
-            'id' => $m->id,
-            'full_name' => $m->full_name,
-            'rut' => $m->rut,
-            'sec_licence' => $m->sec_licence,
-            'sec_class' => $m->sec_class,
-            'specialty' => $m->specialty,
-            'city' => $m->city,
-            'region' => $m->region,
-            'slug' => $m->slug,
-            'photo_url' => $m->photo_url
-        ]);
+            $membersSearch = $members->map(fn($m) => [
+                'id' => $m->id,
+                'full_name' => $m->full_name,
+                'rut' => $m->rut,
+                'sec_licence' => $m->sec_licence,
+                'sec_class' => $m->sec_class,
+                'specialty' => $m->specialty,
+                'city' => $m->city,
+                'region' => $m->region,
+                'slug' => $m->slug,
+                'photo_url' => $m->photo_url
+            ]);
 
-        $faqs = Faq::where('is_published', true)
-            ->orderBy('order', 'asc')
-            ->get();
+            $faqs = Faq::where('is_published', true)
+                ->orderBy('order', 'asc')
+                ->get();
+
+            return compact('president', 'members', 'membersSearch', 'faqs');
+        });
+
+        $president = $homeData['president'];
+        $members = $homeData['members'];
+        $membersSearch = $homeData['membersSearch'];
+        $faqs = $homeData['faqs'];
 
         // Generate Comprehensive JSON-LD Schema for Organization, LocalBusiness and FAQPage
         $organizationSchema = [
@@ -42,8 +52,8 @@ class HomeController extends Controller
                 [
                     '@type' => ['Organization', 'ProfessionalService', 'LocalBusiness'],
                     '@id' => url('/#organization'),
-                    'name' => 'Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG',
-                    'alternateName' => ['GAE AG', 'G.A.E. A.G.', 'Asociación Gremial del Gas Agua y Energía'],
+                    'name' => 'GAE AG - Profesionales del Gas, Agua y Energía',
+                    'alternateName' => ['GAE AG', 'G.A.E. A.G.', 'Asociación Gremial del Gas Agua y Energía', 'Asociación Gremial de Profesionales del Gas Agua y Energía GAE AG'],
                     'url' => url('/'),
                     'logo' => asset('images/GAEGAG.jpg'),
                     'image' => asset('images/GAEGAG.jpg'),

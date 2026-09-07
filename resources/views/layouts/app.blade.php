@@ -3,8 +3,8 @@
     $contactPhone = \App\Models\Setting::getByKey('contact_phone', '+56 9 4987 7316');
     $contactEmail = \App\Models\Setting::getByKey('contact_email', 'contacto@gae-ag.cl');
     $cleanPhone = preg_replace('/[^0-9+]/', '', $contactPhone);
-    $defaultTitle = \App\Models\Setting::getByKey('site_seo_title', 'GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía en Chile | Instaladores SEC');
-    $defaultMetaDesc = \App\Models\Setting::getByKey('site_meta_description', 'Sitio oficial de GAE AG, Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.');
+    $defaultTitle = \App\Models\Setting::getByKey('site_seo_title', 'GAE AG - Profesionales del Gas, Agua y Energía');
+    $defaultMetaDesc = \App\Models\Setting::getByKey('site_meta_description', 'Gremio oficial de profesionales en Gas, Agua y Energía con acreditación SEC en Chile, fundado por Domingo Isaín Plaza Caamaño. Excelencia técnica.');
 @endphp
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -302,7 +302,7 @@
 
                 <!-- Navigation Links -->
                 <div>
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Navegación</h3>
+                    <p class="text-sm font-bold uppercase tracking-wider text-white mb-4">Navegación</p>
                     <ul class="space-y-2.5 text-sm text-slate-300">
                         <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="{{ route('pages.quienes_somos') }}" class="hover:text-white transition-colors">Quiénes Somos</a></li>
@@ -315,7 +315,7 @@
 
                 <!-- Contact & Support -->
                 <div>
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Contacto & Soporte</h3>
+                    <p class="text-sm font-bold uppercase tracking-wider text-white mb-4">Contacto & Soporte</p>
                     <ul class="space-y-2.5 text-sm text-slate-300">
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.144 4.175 4.287-1.124zm11.383-6.183c-.309-.154-1.826-.901-2.109-1.004-.284-.103-.491-.154-.698.154-.207.309-.801 1.004-.982 1.211-.181.207-.362.232-.67.077-.309-.154-1.306-.481-2.488-1.535-.919-.82-1.54-1.833-1.721-2.142-.181-.309-.019-.476.135-.63.139-.138.309-.362.464-.542.155-.181.207-.309.31-.516.103-.207.052-.387-.026-.542-.078-.154-.698-1.681-.957-2.301-.252-.603-.509-.522-.698-.531-.18-.009-.387-.009-.595-.009-.207 0-.542.078-.826.387-.284.309-1.085 1.061-1.085 2.589 0 1.528 1.112 3.004 1.267 3.211.155.207 2.189 3.342 5.304 4.686.741.32 1.319.511 1.77.654.743.236 1.419.203 1.953.123.596-.089 1.826-.746 2.084-1.467.258-.721.258-1.339.181-1.467-.078-.128-.284-.206-.593-.361z"/></svg>

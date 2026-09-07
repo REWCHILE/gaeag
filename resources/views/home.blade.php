@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'GAE AG - Asociación Gremial de Profesionales del Gas Agua y Energía')
-@section('meta_description', 'Sitio oficial de GAE AG, la Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.')
+@section('title', 'GAE AG - Profesionales del Gas, Agua y Energía')
+@section('meta_description', 'Gremio oficial de profesionales en Gas, Agua y Energía con acreditación SEC en Chile, fundado por Domingo Isaín Plaza Caamaño. Excelencia técnica.')
 
 @push('head')
     <!-- Preload Responsive Hero LCP Image -->
@@ -100,7 +100,7 @@
                 </h1>
 
                 <p class="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-medium drop-shadow-md">
-                    Nuestra Asociación Gremial fue creada por iniciativa de profesionales y especialistas para <strong>profesionalizar constantemente a los instaladores de Gas, Agua y Energía</strong> y así prestar un servicio técnico de excelencia en todo Chile.
+                    Nuestra Asociación Gremial fue creada por iniciativa de profesionales y especialistas para profesionalizar a instaladores en <strong class="text-white">Gas, Agua y Energía</strong> y así prestar un servicio técnico de excelencia en todo Chile.
                 </p>
 
                 <!-- 2026 Instant SEC Verification Widget -->
@@ -150,7 +150,7 @@
                     </div>
                     
                     <div class="text-center space-y-2 border-t border-slate-800 pt-4">
-                        <h2 class="text-xl font-bold text-white">G.A.E. A.G.</h2>
+                        <p class="text-xl font-bold text-white tracking-wide">G.A.E. A.G.</p>
                         <p class="text-xs font-semibold text-sky-400 uppercase tracking-wider">Asociación Gremial de Profesionales</p>
                         <p class="text-xs text-slate-400">Gas, Agua y Energías Renovables Chile</p>
                     </div>
@@ -189,7 +189,7 @@
                             <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                                 Fundador & Presidente
                             </span>
-                            <h3 class="text-2xl font-black text-white mt-2">{{ $president->full_name ?? 'Domingo Isaín Plaza Caamaño' }}</h3>
+                            <h3 class="text-2xl font-black text-white mt-2">{{ $president->full_name ?? 'Domingo Isaín Plaza Caamaño' }} - Presidente GAE AG</h3>
                             <p class="text-xs font-medium text-slate-300">Presidente del gremio desde su creación en 2017 hasta la actualidad</p>
                         </div>
 
@@ -669,7 +669,7 @@
                     <div class="pt-4 border-t border-slate-200 flex items-center justify-between gap-2">
                         <a href="{{ route('members.public_show', $member->slug) }}" aria-label="Ver credencial y perfil de {{ $member->full_name }}" class="flex-grow text-center py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1.5">
                             <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                            Ver Credencial
+                            Ver Credencial <span class="sr-only">de {{ $member->full_name }}</span>
                         </a>
 
                         @php
@@ -681,7 +681,7 @@
                            title="Contactar por WhatsApp a {{ $member->full_name }}"
                            class="py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow-sm min-h-[44px] flex items-center justify-center gap-1">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.144 4.175 4.287-1.124zm11.383-6.183c-.309-.154-1.826-.901-2.109-1.004-.284-.103-.491-.154-.698.154-.207.309-.801 1.004-.982 1.211-.181.207-.362.232-.67.077-.309-.154-1.306-.481-2.488-1.535-.919-.82-1.54-1.833-1.721-2.142-.181-.309-.019-.476.135-.63.139-.138.309-.362.464-.542.155-.181.207-.309.31-.516.103-.207.052-.387-.026-.542-.078-.154-.698-1.681-.957-2.301-.252-.603-.509-.522-.698-.531-.18-.009-.387-.009-.595-.009-.207 0-.542.078-.826.387-.284.309-1.085 1.061-1.085 2.589 0 1.528 1.112 3.004 1.267 3.211.155.207 2.189 3.342 5.304 4.686.741.32 1.319.511 1.77.654.743.236 1.419.203 1.953.123.596-.089 1.826-.746 2.084-1.467.258-.721.258-1.339.181-1.467-.078-.128-.284-.206-.593-.361z"/></svg>
-                            <span class="hidden sm:inline">Contactar</span>
+                            <span class="hidden sm:inline">Contactar</span> <span class="sr-only">a {{ $member->full_name }}</span>
                         </a>
 
                         <button onclick="navigator.clipboard.writeText('{{ $member->public_url }}'); alert('¡Enlace copiado al portapapeles!');" 

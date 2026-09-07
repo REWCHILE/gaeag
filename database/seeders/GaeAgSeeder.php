@@ -239,11 +239,11 @@ class GaeAgSeeder extends Seeder
         );
         \App\Models\Setting::updateOrCreate(
             ['key' => 'site_seo_title'],
-            ['value' => 'GAE AG - Asociación Gremial de Profesionales del Gas, Agua y Energía en Chile | Instaladores SEC', 'description' => 'Título SEO Google']
+            ['value' => 'GAE AG - Profesionales del Gas, Agua y Energía', 'description' => 'Título SEO Google']
         );
         \App\Models\Setting::updateOrCreate(
             ['key' => 'site_meta_description'],
-            ['value' => 'Sitio oficial de GAE AG, la Asociación Gremial fundada en 2017 por Domingo Isaín Plaza Caamaño. Profesionalización constante de especialistas e instaladores en Gas, Agua y Energía con acreditación SEC.', 'description' => 'Meta descripción SEO']
+            ['value' => 'Gremio oficial de profesionales en Gas, Agua y Energía con acreditación SEC en Chile, fundado por Domingo Isaín Plaza Caamaño. Excelencia técnica.', 'description' => 'Meta descripción SEO']
         );
     }
 }
